@@ -36,7 +36,7 @@ class GoogleDocs {
   }
 
   static _checkForNewPage() {
-    if ("view" === this._getMode()) return;
+    // if ("view" === this._getMode()) return;
     this._getUnhandledPages().forEach((t => {
       this._isInView(t) && this._onPageInViewCallbacks.forEach((e => e(t)))
     }))
@@ -261,6 +261,7 @@ class GoogleDocs {
   static filterErrors(t, e) {
     let o = !1;
     const n = this.getAdapterType();
+    return e
     return "html" === n ? o = !!GoogleDocsHTML.hasPreviousPage(t) : "canvas" === n && (o = !!GoogleDocsCanvas.hasPreviousPage(t)), e.filter((t => !this.DISABLED_RULES.includes(t.rule.id) && !t.rule.id.endsWith("UNPAIRED_BRACKETS") && (!(o && 0 === t.start && !t.isSpellingError && !isCapitalized(t.originalPhrase)) && (!(o && t.start < 140 && "UPPERCASE_SENTENCE_START" === t.rule.id && this.ERROR_AT_LINE_START_REG_EXP.test(t.contextPhrase)) && (!t.fixes[0] || t.fixes[0].value.replace(this.NON_BREAKING_SPACE_REG_EXP, " ") !== t.originalPhrase)))))
   }
 
