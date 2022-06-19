@@ -3,10 +3,9 @@
  * Wiki摘要信息
  */
 class WikiItem {
-    constructor(id, name, content) {
+    constructor(id, name) {
         this.name = name
         this.id = id
-        this.content = content
     }
 }
 class SearchItem {
@@ -17,22 +16,32 @@ class SearchItem {
     }
 }
 class WikiManager {
-    constructor() {
-        this.wikiInfoList = this.getWikiKeyList()
+    static wikiInfoList = []
+    static initWikiInfo() {
+        let manager = new FlappyAuth()
+        manager.flappyFetch("https://hamilhong.work/api/wiki/list")
+            .then((response) => response.json())
+            .then((data) => {
+                if (data) {
+                    WikiManager.wikiInfoList = []
+                    for (let i of data) {
+                        WikiManager.wikiInfoList.push({
+                            name: i["name"],
+                            id: i["id"]
+                        })
+                    }
+                }
+
+            })
+
     }
     /**
      * 需要匹配的关键词
      */
-    getWikiKeyList() {
-        return [
-            new WikiItem("1", "李白", "李白 test"),
-            new WikiItem("2", "雨霖铃", "雨霖铃 test"),
-            new WikiItem("3", "UI", "ui test"),
-            new WikiItem("4", "WFH", "wfh test"),
-            new WikiItem("5", "WIP", "wip test")
-        ]
+    static getWikiKeyList() {
+        return WikiManager.initWikiInfo
     }
-    matchWikiContent(content) {
+    static matchWikiContent(content) {
         let result = []
         if (content && content.length > 0) {
             this.wikiInfoList.map((wikiValue) => {

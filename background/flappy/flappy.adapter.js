@@ -30,7 +30,7 @@ class FlappyAdapter {
                 "code": "en-US",
                 "name": "English (US)"
             },
-            "description": "Possible spelling mistake found.",
+            "description": JSON.stringify(searchItem.wikiItem),
             "shortDescription": "Spelling mistake",
             "start": searchItem.startIndex,
             "end": searchItem.endIndex,
@@ -42,3 +42,5 @@ class FlappyAdapter {
         }
     }
 }
+
+WikiManager.initWikiInfo()

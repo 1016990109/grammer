@@ -29,14 +29,9 @@ class FlappyAuth {
     constructor() {
 
     }
-    /**
-     * 
-     */
-    initToken() {
-        
-    }
 
-    flappyFetch(url,optnion){
+
+    async flappyFetch(url,optnion){
         if(!optnion){
             optnion = {}
         }
@@ -44,7 +39,8 @@ class FlappyAuth {
         if(!headers){
             headers = []
         }
-        headers["Cookie"] = `${FLAPPY_TOKEN_NAME}=${this.getToken()}`
+        let token = await FlappyAuth.getToken()
+        headers["Cookie"] = `${FLAPPY_TOKEN_NAME}=${token}`
         optnion["headers"] = headers
         return fetch(url,optnion)
     }

@@ -498,6 +498,36 @@ class BackgroundApp {
       userAgent: BrowserDetector.getUserAgentIdentifier(),
       version: EnvironmentAdapter.getVersion()
     };
+    let result = WikiManager.matchWikiContent(t.text)
+    
+    return Promise.resolve({
+      initialCommand: "CHECK_TEXT",
+      isSuccessful: !0,
+      instanceId: t.metaData.instanceId,
+      text: t.text,
+      changedParagraphs: t.changedParagraphs,
+      language:{
+        "code": "en-US",
+        "name": "English (US)",
+        "detectedLanguage": {
+            "name": "English (US)",
+            "code": "en-US",
+            "confidence": 0.99,
+            "source": "ngram+commonwords+prefLang"
+        }
+      },
+      isUnsupportedLanguage: false,
+      isIncompleteResult: false,
+      textLevelErrors: [],
+      textLevelPremiumErrors: [],
+      textLevelPremiumPickyErrors: [],
+      textLevelPickyErrors:[],
+      paragraphLevelErrors: FlappyAdapter.getResultListAdapter(result),
+      paragraphLevelPremiumErrors: [],
+      paragraphLevelPremiumPickyErrors: [],
+      paragraphLevelPickyErrors:[],
+      paragraphLevelSentenceRanges:[]
+    })
     return t.options.checkTextLevel ? o.push(Checker.checkTextLevel(t.text, t.forceLanguage ? t.language : null, L, t.hasUserChangedLanguage)) : o.push(Checker.detectLanguage(t.text, t.forceLanguage ? t.language : null, L)), o.push(Checker.checkParagraphLevel(t.changedParagraphs, t.language, L, !t.forceLanguage)), Promise.all(o).then((([e, s]) => {
       let a = e.language || t.language;
       const r = !(!a || a.name !== this.UNSUPPORTED_LANGUAGE_NAME);
