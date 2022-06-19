@@ -21,7 +21,7 @@ class FlappyAdapter {
                 "isPremium": false
             },
             "isCustomError": false,
-            "isSpellingError": true,
+            "isSpellingError": false,
             "isStyleError": false,
             "isPunctuationError": false,
             "isPicky": false,
@@ -31,7 +31,7 @@ class FlappyAdapter {
                 "name": "English (US)"
             },
             "description": JSON.stringify(searchItem.wikiItem),
-            "shortDescription": "Spelling mistake",
+            "shortDescription": "PlappyPedia",
             "start": searchItem.startIndex,
             "end": searchItem.endIndex,
             "length": length,
