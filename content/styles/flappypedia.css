@@ -1,0 +1,23 @@
+.wiki-header {
+    background: #F4F2FF;
+    padding: 20px;
+    display: flex;
+}
+
+.wiki-title {
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 20px;
+    color: #111111;
+}
+
+.wiki-sub-title {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 14px;
+    color: #111111;
+}
+
+.wiki-airplane {
+
+}

@@ -1088,7 +1088,8 @@ class LTAssistant {
         enableKeyboard: i,
         canCorrectMultipleAtOnce: e.inputAreaTweaks.canCorrectMultipleErrorsAtOnce(e) && containsSimilarErrors(e.displayedErrors, t)
       };
-    e.errorCard = new ErrorCard(e.inputArea, r, t, a, d), this._fadeAllDialogs();
+    e.errorCard = new ErrorCard(e.inputArea, r, t, a, d)
+    this._fadeAllDialogs();
     const l = LanguageManager.getPrimaryLanguageCode(t.language.code);
     t.isSpellingError ? Math.random() < .1 && Tracker.trackEvent("Action", `${l}:open_spell_suggestion:10perc`, t.rule.id) : Tracker.trackEvent("Action", `${l}:open_rule`, t.rule.id), t.language.code.startsWith("de") && t.fixes.length && t.fixes[0].value.match(/\(.+\)/) && !["HALLE_STADT", "EINHEITEN_METRISCH", "NEUKIRCHEN_STADT", "UG_HAFTUNGSBESCHRÄNKT"].includes(t.rule.id) && Tracker.trackError("other", "broken_fix", l + ":" + t.rule.id + ": " + t.contextPhrase)
   }

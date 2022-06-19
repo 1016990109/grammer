@@ -1,7 +1,16 @@
 /*! (C) Copyright 2020 LanguageTooler GmbH. All rights reserved. */
 class ErrorCard {
   constructor(e, t, r, s, i) {
-    this._renderOutsideIframe = !1, this._inputArea = e, this._error = r, this._tweaks = s, this._uiOptions = i, this._referenceArea = e, this._keyboardEventTarget = this._tweaks.getKeyboardEventTarget(), this._document = this._inputArea.ownerDocument, this._isHiddenMatch = "HIDDEN_RULE" === r.rule.id, this._buttons = [];
+    this._renderOutsideIframe = !1
+    this._inputArea = e
+    this._error = r
+    this._tweaks = s
+    this._uiOptions = i
+    this._referenceArea = e
+    this._keyboardEventTarget = this._tweaks.getKeyboardEventTarget()
+    this._document = this._inputArea.ownerDocument
+    this._isHiddenMatch = "HIDDEN_RULE" === r.rule.id
+    this._buttons = [];
     const n = getFrameElement(window);
     n && this._inputArea === this._inputArea.ownerDocument.body && isLTAvailable(window.parent) && (this._referenceArea = n, this._document = this._referenceArea.ownerDocument, this._renderOutsideIframe = !0, this._onPageHide = this._onPageHide.bind(this), window.addEventListener("pagehide", this._onPageHide, !0)), this._domMeasurement = new DomMeasurement(this._document), this._eventListeners = [], this._render(t), this._uiOptions.enableKeyboard && this._buttons.length && (this._focusedButtonIndex = 0, this._updateFocus())
   }
@@ -38,18 +47,36 @@ class ErrorCard {
   }
 
   _render(e) {
-    this._container = createContainerElement(this._document, ErrorCard.CONTAINER_ELEMENT_NAME), this._container.style.display = "none", this._container.setAttribute("data-lt-adjust-appearance", "true"), this._container.classList.add("lt-error-card"), this._container.addEventListener("click", (e => e.stopPropagation())), hasDarkBackground(this._inputArea) ? this._container.setAttribute("data-lt-force-appearance", "dark") : this._container.setAttribute("data-lt-force-appearance", "light"), this._eventListeners.push(addUseCaptureEvent(this._keyboardEventTarget, "keydown", this._onKeyDown.bind(this)), addUseCaptureEvent(this._container, "mousedown", (e => {
-      e.stopImmediatePropagation(), e.target && !e.target.closest(".lt-errorcard__text, .lt-card__headline") && e.preventDefault()
-    })), addUseCaptureEvent(this._container, "mouseup", (e => e.stopImmediatePropagation())), addUseCaptureEvent(this._container, "pointerdown", (e => e.stopImmediatePropagation())), addUseCaptureEvent(this._container, "pointerup", (e => e.stopImmediatePropagation())));
+    this._container = createContainerElement(this._document, ErrorCard.CONTAINER_ELEMENT_NAME)
+    this._container.style.display = "none"
+    this._container.setAttribute("data-lt-adjust-appearance", "true")
+    this._container.classList.add("lt-error-card")
+    this._container.addEventListener("click", (e => e.stopPropagation()))
+    hasDarkBackground(this._inputArea) ? this._container.setAttribute("data-lt-force-appearance", "dark") : this._container.setAttribute("data-lt-force-appearance", "light")
+    this._eventListeners.push(
+      addUseCaptureEvent(this._keyboardEventTarget, "keydown", this._onKeyDown.bind(this)),
+      addUseCaptureEvent(this._container, "mousedown", (e => {
+        e.stopImmediatePropagation(), e.target && !e.target.closest(".lt-errorcard__text, .lt-card__headline") && e.preventDefault()
+      })),
+      addUseCaptureEvent(this._container, "mouseup", (e => e.stopImmediatePropagation())),
+      addUseCaptureEvent(this._container, "pointerdown", (e => e.stopImmediatePropagation())),
+      addUseCaptureEvent(this._container, "pointerup", (e => e.stopImmediatePropagation())))
     const t = this._document.createElement("lt-div");
-    t.classList.add("lt-card__container"), t.classList.add("lt-card__container--error-card"), t.classList.add("notranslate"), this._renderContent(t);
-    const r = this._document.createElement("lt-span");
-    r.className = "lt-card__close-button lt-icon__close_small", this._eventListeners.push(addUseCaptureEvent(r, "click", this._onCloseClicked.bind(this))), t.appendChild(r), this._container.appendChild(t);
+    t.classList.add("lt-card__container")
+    t.classList.add("lt-card__container--error-card")
+    t.classList.add("notranslate")
+    this._renderContent(t)
+    // const r = this._document.createElement("lt-span");
+    // r.className = "lt-card__close-button lt-icon__close_small"
+    // this._eventListeners.push(addUseCaptureEvent(r, "click", this._onCloseClicked.bind(this)))
+    // t.appendChild(r)
+    this._container.appendChild(t);
     const s = this._domMeasurement.getDocumentVisibleBox(),
       i = this._document.elementFromPoint(e.left - s.left + 10, e.bottom - s.top + 10),
       n = i && !this._inputArea.contains(i),
       o = "BODY" === this._referenceArea.nodeName ? this._document.documentElement : this._document.body;
-    o.appendChild(this._container), this._domMeasurement.clearCache();
+    o.appendChild(this._container)
+    this._domMeasurement.clearCache();
     const a = this._domMeasurement.getBorderBox(t);
     if (this._renderOutsideIframe) {
       let t = document.createElement("lt-span");
@@ -67,24 +94,21 @@ class ErrorCard {
   }
 
   _renderContent(e) {
+    // render flappypedia 的卡片
+    const wikiHeader = this._document.createElement('lt-div')
+    wikiHeader.classList.add('wiki-header')
+    const wikiTitle = this._document.createElement('lt-div')
+    wikiTitle.classList.add('wiki-title')
+    wikiTitle.innerHTML = '雨霖铃'
+    wikiHeader.appendChild(wikiTitle)
+    const wikiSubTitle = this._document.createElement('lt-div')
+    wikiSubTitle.classList.add('wiki-sub-title')
+    wikiSubTitle.innerHTML = '雨霖铃__李白'
+    wikiHeader.appendChild(wikiSubTitle)
+    e.appendChild(wikiHeader)
     const t = this._document.createElement("lt-div");
-    if (t.classList.add("lt-card__headline"), this._isHiddenMatch && "test2" === this._uiOptions.showHiddenMatchesInplace ? (t.textContent = ErrorCard.MESSAGES.HEADLINE_HIDDEN_MATCH, e.classList.add("lt-card__container--hidden-mistake")) : this._error.isCustomError ? (t.textContent = this._error.shortDescription || ErrorCard.MESSAGES.HEADLINE_CUSTOM_SUGGESTION_ERROR, e.classList.add("lt-card__container--custom-suggestion")) : this._error.isSpellingError ? (t.textContent = ErrorCard.MESSAGES.HEADLINE_SPELLING_ERROR, e.classList.add("lt-card__container--spelling-mistake")) : this._error.isStyleError ? (t.textContent = this._error.shortDescription || ErrorCard.MESSAGES.HEADLINE_SUGGESTION_ERROR, e.classList.add("lt-card__container--style-suggestion")) : this._error.isPunctuationError ? (t.textContent = this._error.shortDescription || ErrorCard.MESSAGES.HEADLINE_PUNCTUATION_ERROR, e.classList.add("lt-card__container--punctuation-mistake")) : (t.textContent = this._error.shortDescription || ErrorCard.MESSAGES.HEADLINE_GRAMMAR_ERROR, e.classList.add("lt-card__container--grammar-mistake")), e.appendChild(t), this._error.isPicky && !this._isHiddenMatch && e.classList.add("lt-card__container--picky-mistake"), this._isHiddenMatch) {
-      const t = this._document.createElement("lt-div");
-      t.textContent = ErrorCard.MESSAGES.PREMIUM_TEXT, t.className = "lt-errorcard__premium-text";
-      const r = this._document.createElement("lt-div");
-      r.textContent = ErrorCard.MESSAGES.PREMIUM_BUTTON, r.className = "lt-errorcard__premium-button", this._eventListeners.push(addUseCaptureEvent(r, "click", (e => {
-        e.stopImmediatePropagation();
-        const t = {errorCard: this, campaign: "addon2-errorcard-match"};
-        dispatchCustomEvent(document, ErrorCard.eventNames.premiumTeaserClicked, t)
-      }))), e.append(t), e.append(r)
-    } else {
-      const t = this._document.createElement("lt-div");
-      if (t.classList.add("lt-errorcard__text"), t.textContent = this._error.description, e.appendChild(t), this._error.rule.urls && this._error.rule.urls.length > 0) {
-        const e = this._document.createElement("lt-span");
-        e.classList.add("lt-errorcard__more-details"), e.classList.add("lt-icon__info"), e.title = ErrorCard.MESSAGES.LINK_MORE_DETAILS, this._eventListeners.push(addUseCaptureEvent(e, "click", this._onMoreDetailsClick.bind(this))), t.appendChild(e)
-      }
-    }
-    this._renderFixes(e), this._renderKeyboardInstructuions(e), this._renderActions(e), this._renderFooter(e)
+    t.textContent = JSON.stringify(this._error, null, 2)
+    e.appendChild(t)
   }
 
   _renderFixes(e) {
@@ -173,6 +197,7 @@ class ErrorCard {
         onSelect: r
       })
     }
+    const t = this._document.createElement("lt-div");
     if (this._error.isPicky && "extension" === EnvironmentAdapter.getType() && !this._isHiddenMatch) {
       const t = this._document.createElement("lt-div");
       t.classList.add("lt-errorcard__turn-off-picky-mode"), t.classList.add("lt-icon__picky_mode"), t.textContent = ErrorCard.MESSAGES.TURN_OFF_PICKY_MODE;

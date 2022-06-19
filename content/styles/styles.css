@@ -3865,11 +3865,11 @@ html:not([data-lt-script-installed]):not(.__lt-dummy-1):not(.__lt-dummy-2):not(.
 html:not([data-lt-script-installed]):not(.__lt-dummy-1):not(.__lt-dummy-2):not(.__lt-dummy-3):not(.__lt-dummy-4):not(.__lt-dummy-5):not(.__lt-dummy-6):not(.__lt-dummy-1654869771686) lt-card .lt-card__container {
     pointer-events: all !important;
     animation: lt-fadein 0.2s !important;
-    padding: 0 12px 0 12px !important;
+    padding: 0 !important;
     background: var(--lt-color-white) !important;
     border: initial !important;
     box-shadow: var(--lt-shadow-website-overlay) !important;
-    border-radius: 6px !important;
+    border-radius: 12px !important;
     box-sizing: border-box !important;
     color: var(--lt-color-text-default) !important;
     cursor: initial !important;
