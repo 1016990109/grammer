@@ -20,7 +20,7 @@
 		"64": "assets/images/icons/icon64.png",
 		"128": "assets/images/icons/icon128.png"
 	},
-	"permissions": ["activeTab", "storage", "contextMenus"],
+	"permissions": ["activeTab", "storage", "contextMenus","cookies","https://hamilhong.work/*"],
 	"storage": {
 		"managed_schema": "managed_settings.json"
 	},

@@ -41,7 +41,6 @@ class WikiManager {
                 if (wikiValue.name && wikiValue.name.length > 0) {
                     searchResultIndex = content.indexOf(wikiValue.name, searchStartIndex)
                     while (searchResultIndex !== -1) {
-                        //hit result
                         let startIndex = searchResultIndex
                         let endIndex = searchResultIndex + wikiValue.name.length
                         result.push(new SearchItem(wikiValue, startIndex, endIndex))
@@ -49,7 +48,6 @@ class WikiManager {
                         searchResultIndex = content.indexOf(wikiValue.name, searchStartIndex)
                     }
                 }
-
             })
         }
         return result
