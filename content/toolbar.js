@@ -38,6 +38,8 @@ class Toolbar {
   }
 
   _render() {
+    // 隐藏 toolbar
+    return
     if (this._destroyed) return;
     const t = ["lt-toolbar__status-icon"], e = ["lt-toolbar__premium-icon"];
     let s = Toolbar.MESSAGES.STATUS_ICON_TOOLTIP, o = "";

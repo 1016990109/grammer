@@ -93,6 +93,8 @@ class GoogleDocs {
   }
 
   static _insertMenubarButton() {
+    // 隐藏 menubar
+    return
     if (this._menuBarButton) return;
     if (this._isInPageLessMode()) return;
     const t = document.querySelector("#clearFormattingButton");

@@ -95,20 +95,71 @@ class ErrorCard {
 
   _renderContent(e) {
     // render flappypedia 的卡片
+    const wikiInfo = (JSON.parse(this._error.description || '{}')).info
     const wikiHeader = this._document.createElement('lt-div')
     wikiHeader.classList.add('wiki-header')
     const wikiTitle = this._document.createElement('lt-div')
     wikiTitle.classList.add('wiki-title')
-    wikiTitle.innerHTML = '雨霖铃'
+    wikiTitle.innerHTML = wikiInfo.name
     wikiHeader.appendChild(wikiTitle)
     const wikiSubTitle = this._document.createElement('lt-div')
     wikiSubTitle.classList.add('wiki-sub-title')
-    wikiSubTitle.innerHTML = '雨霖铃__李白'
+    wikiSubTitle.innerHTML = wikiInfo.fullName
     wikiHeader.appendChild(wikiSubTitle)
     e.appendChild(wikiHeader)
-    const t = this._document.createElement("lt-div");
-    t.textContent = JSON.stringify(this._error, null, 2)
-    e.appendChild(t)
+
+    const content = this._document.createElement('lt-div')
+    content.classList.add('wiki-container')
+    const wikiContent = this._document.createElement('lt-div')
+    wikiContent.classList.add('wiki-content')
+    const wikiText = this._document.createElement('lt-div')
+    wikiText.innerHTML = wikiInfo.content
+    wikiText.classList.add('wiki-text')
+    wikiContent.appendChild(wikiText)
+    const showAll = this._document.createElement('lt-div')
+    showAll.innerHTML = 'show all ↓'
+    showAll.classList.add('show-all')
+    showAll.onclick = function (e) {
+      wikiText.innerHTML = wikiInfo.detail
+    }
+    wikiContent.appendChild(showAll)
+    content.appendChild(wikiContent)
+
+    const relateLinks = this._document.createElement('lt-div')
+    relateLinks.innerHTML = 'Related Links'
+    relateLinks.classList.add('relate-title')
+    content.appendChild(relateLinks)
+
+    for (let i = 0; i < wikiInfo.links.length; i++) {
+      try {
+        const link = JSON.parse(wikiInfo.links[i])
+        const linkTitle = this._document.createElement('a')
+        linkTitle.href = link.link
+        linkTitle.target = '_blank'
+        linkTitle.innerHTML = link.title
+        content.appendChild(linkTitle)
+      } catch (e) {
+        console.error(e)
+      }
+    }
+
+    const relatePeople = this._document.createElement('lt-div')
+    relatePeople.innerHTML = 'Related People'
+    relatePeople.classList.add('relate-title')
+    content.appendChild(relatePeople)
+    for (let i = 0; i < wikiInfo.people.length; i++) {
+      try {
+        const people = wikiInfo.people[i]
+        const peopleTitle = this._document.createElement('span')
+        peopleTitle.innerHTML = people.name
+        peopleTitle.classList.add('wiki-tag')
+        content.appendChild(peopleTitle)
+      } catch (e) {
+        console.error(e)
+      }
+    }
+
+    e.appendChild(content)
   }
 
   _renderFixes(e) {

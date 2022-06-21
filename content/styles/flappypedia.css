@@ -1,7 +1,7 @@
 .wiki-header {
-    background: #F4F2FF;
-    padding: 20px;
-    display: flex;
+    background: #F4F2FF !important;
+    padding: 20px !important;
+    display: flex !important;
 }
 
 .wiki-title {
@@ -20,4 +20,48 @@
 
 .wiki-airplane {
 
+}
+
+.wiki-container {
+    padding: 20px;
+}
+
+.wiki-content {
+
+}
+
+.wiki-text {
+    font-weight: 400;
+    font-size: 12px;
+}
+
+.show-all {
+    float: right;
+    color: #C4C4C4;
+    cursor: pointer;
+}
+
+.wiki-tag {
+    background: #7B61FF;
+    border-radius: 2px;
+    font-weight: 600;
+    font-size: 6px;
+    margin-right: 10px;
+    color: white;
+    padding: 2px 4px;
+}
+
+.wiki-link {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 20px;
+    color: #3384FC;
+}
+
+.relate-title {
+    color: #111111;
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 20px;
+    margin: 10px 0;
 }

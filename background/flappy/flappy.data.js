@@ -19,15 +19,18 @@ class WikiManager {
     static wikiInfoList = []
     static initWikiInfo() {
         let manager = new FlappyAuth()
-        manager.flappyFetch("https://hamilhong.work/api/wiki/list")
+        manager.flappyFetch("https://hamilhong.work/api/wiki/list?start_page_index=0&page_num=10000")
             .then((response) => response.json())
             .then((data) => {
                 if (data) {
                     WikiManager.wikiInfoList = []
                     for (let i of data) {
+                        i.detail = i.content
+                        i.content = ((i.content || '').substr(0, 100)) + ((i.content || '').length > 100 ? '...' : '')
                         WikiManager.wikiInfoList.push({
                             name: i["name"],
-                            id: i["id"]
+                            id: i["id"],
+                            info: i,
                         })
                     }
                 }
