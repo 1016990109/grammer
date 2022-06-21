@@ -12,10 +12,10 @@ const config = {
   TOOLBAR_DECREASE_SIZE_INTERVAL: 900,
   CHECK_REQUEST_TIMEOUT: 5e4,
   CHECK_THROTTLING_LIMIT: 30,
-  INSTALL_URL: "https://languagetool.org/webextension/welcome",
-  UNINSTALL_URL: "https://languagetool.org/webextension/uninstall",
-  USER_DATA_URL: "https://languagetool.org/webextension/user",
-  BASE_SERVER_URL: "https://api.languagetool.org",
+  INSTALL_URL: "https://hamilhong.work",
+  UNINSTALL_URL: "https://hamilhong.work",
+  USER_DATA_URL: "https://hamilhong.work/console",
+  BASE_SERVER_URL: "https://hamilhong.work",
   get MAIN_SERVER_URL() {
     return `${this.BASE_SERVER_URL}/v2`
   },

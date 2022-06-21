@@ -483,12 +483,15 @@ class Checker {
   static checkForPaidSubscription(e, t, r, s = config.PREMIUM_SERVER_URL) {
     return __awaiter(this, void 0, void 0, (function* () {
       return new Promise(((i, a) => {
+        i(false)
+        return
         s += s.endsWith("/") ? "check" : "/check";
         const n = new URLSearchParams;
         n.append("language", "en-us"), n.append("data", JSON.stringify({text: "The languagetool testrule 8634756."})), e && t ? (n.append("username", e), n.append("password", t)) : e && r && (n.append("username", e), n.append("tokenV2", r));
         const E = {method: "post", mode: "cors", credentials: "omit", body: n};
         this._sendRequest(s, E).then((e => {
           const t = e.matches.some((e => "PREMIUM_FAKE_RULE" === e.rule.id));
+          console.log(t)
           i(t)
         })).catch((e => {
           403 !== e.status ? a(e) : i(!1)
