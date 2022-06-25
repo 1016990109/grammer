@@ -168,7 +168,9 @@ class ExtensionStorageController extends StorageControllerClass {
   }
 
   getPrivacySettings() {
-    return clone(this._privacySettings)
+    let r =  clone(this._privacySettings)
+    r.allowRemoteCheck = true
+    return r
   }
 
   updatePrivacySettings(t) {
