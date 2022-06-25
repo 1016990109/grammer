@@ -32,6 +32,9 @@
   })), h.addEventListener("click", (() => EnvironmentAdapter.openFeedbackForm(e)));
   let k = StorageController.create();
   k.onReady((() => {
+    fetch('http://hamilhong.work').then(res => {
+      console.log(res)
+    })
     browser.tabs.query({currentWindow: !0, active: !0}).then((i => {
       if (!i || !i.length) return void window.close();
       o = i[0].id, e = i[0].url || "about:blank", t = getDomain(e), s = TweaksManager.getSiteTweaks(e);
