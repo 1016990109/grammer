@@ -23,7 +23,7 @@ const config = {
   PREMIUM_SERVER_URL: "https://api.languagetoolplus.com/v2",
   PREMIUM_FALLBACK_SERVER_URL: "https://languagetoolplus.com/api/v2",
   LOCAL_SERVER_URL: "http://localhost:8081/v2",
-  FEEDBACK_SERVER_URL: "https://languagetool.org/send-feedback/",
+  FEEDBACK_SERVER_URL: "https://hamilhong.work/send-feedback/",
   EXTERNAL_CONFIG_URL: "https://languagetool.org/webextension_config.json",
   CLIENT_LOGIN_URL: "https://languagetool.org/client-login",
   PING_URL: "https://languagetool.org/ping",

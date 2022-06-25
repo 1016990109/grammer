@@ -3,12 +3,12 @@
 
 	"manifest_version": 2,
 	"name": "__MSG_appName__",
-	"short_name": "LanguageTool",
+	"short_name": "Plappypedia",
 	"description": "__MSG_appDesc__",
 	"version": "5.3.0",
 	"default_locale": "en",
-	"author": "LanguageTooler GmbH",
-	"homepage_url": "https://languagetool.org/",
+	"author": "",
+	"homepage_url": "https://hamilhong.work/",
 	"offline_enabled": false,
 
 	"minimum_chrome_version": "67.0.0",
@@ -154,7 +154,7 @@
 		{
 			"all_frames": true,
 			"js": ["content/languagetool/injector.js"],
-			"matches": ["*://languagetool.org/*"],
+			"matches": ["*://hamilhong.work/*"],
 			"run_at": "document_start"
 		},
 		{
@@ -172,7 +172,7 @@
 	},
 	"browser_action": {
 		"default_icon": "assets/images/icons/icon16.png",
-		"default_title": "LanguageTool",
+		"default_title": "Plappypedia",
 		"default_popup": "popup/popup.html"
 	},
 	"web_accessible_resources": [

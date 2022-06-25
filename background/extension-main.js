@@ -75,16 +75,7 @@ class BackgroundApp {
   static _updateIcon() {
     return __awaiter(this, void 0, void 0, (function* () {
       if (BrowserDetector.isSafari()) return;
-      const e = yield this._isUsedDarkTheme();
-      this._darkMode !== e && (this._darkMode = e, this._darkMode ? this._browserAction.setIcon({
-        path: {
-          16: "/assets/images/icons/icon16_white.png",
-          32: "/assets/images/icons/icon32_white.png",
-          48: "/assets/images/icons/icon48_white.png",
-          64: "/assets/images/icons/icon64_white.png",
-          128: "/assets/images/icons/icon128_white.png"
-        }
-      }) : this._browserAction.setIcon({
+      this._browserAction.setIcon({
         path: {
           16: "/assets/images/icons/icon16.png",
           32: "/assets/images/icons/icon32.png",
@@ -92,7 +83,7 @@ class BackgroundApp {
           64: "/assets/images/icons/icon64.png",
           128: "/assets/images/icons/icon128.png"
         }
-      }))
+      })
     }))
   }
 
@@ -499,21 +490,21 @@ class BackgroundApp {
       version: EnvironmentAdapter.getVersion()
     };
     let result = WikiManager.matchWikiContent(t.text)
-    
+
     return Promise.resolve({
       initialCommand: "CHECK_TEXT",
       isSuccessful: !0,
       instanceId: t.metaData.instanceId,
       text: t.text,
       changedParagraphs: t.changedParagraphs,
-      language:{
+      language: {
         "code": "en-US",
         "name": "English (US)",
         "detectedLanguage": {
-            "name": "English (US)",
-            "code": "en-US",
-            "confidence": 0.99,
-            "source": "ngram+commonwords+prefLang"
+          "name": "English (US)",
+          "code": "en-US",
+          "confidence": 0.99,
+          "source": "ngram+commonwords+prefLang"
         }
       },
       isUnsupportedLanguage: false,
@@ -521,12 +512,12 @@ class BackgroundApp {
       textLevelErrors: [],
       textLevelPremiumErrors: [],
       textLevelPremiumPickyErrors: [],
-      textLevelPickyErrors:[],
+      textLevelPickyErrors: [],
       paragraphLevelErrors: FlappyAdapter.getResultListAdapter(result),
       paragraphLevelPremiumErrors: [],
       paragraphLevelPremiumPickyErrors: [],
-      paragraphLevelPickyErrors:[],
-      paragraphLevelSentenceRanges:[]
+      paragraphLevelPickyErrors: [],
+      paragraphLevelSentenceRanges: []
     })
     return t.options.checkTextLevel ? o.push(Checker.checkTextLevel(t.text, t.forceLanguage ? t.language : null, L, t.hasUserChangedLanguage)) : o.push(Checker.detectLanguage(t.text, t.forceLanguage ? t.language : null, L)), o.push(Checker.checkParagraphLevel(t.changedParagraphs, t.language, L, !t.forceLanguage)), Promise.all(o).then((([e, s]) => {
       let a = e.language || t.language;
