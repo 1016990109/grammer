@@ -44,7 +44,6 @@ class GoogleSlides {
   }
 
   static _checkForNewSlides() {
-    if ("view" === this._currentMode) return;
     document.querySelectorAll(this.UNHANDLED_SLIDE_SELECTOR).forEach((t => {
       this._isInView(t) && this._onNewSlideCallbacks.forEach((e => e(t)))
     }))

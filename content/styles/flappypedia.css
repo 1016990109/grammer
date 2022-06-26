@@ -27,7 +27,8 @@
 }
 
 .wiki-content {
-
+    max-height: 300px;
+    overflow: scroll;
 }
 
 .wiki-text {

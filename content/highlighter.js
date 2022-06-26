@@ -1,23 +1,32 @@
 /*! (C) Copyright 2020 LanguageTooler GmbH. All rights reserved. */
 class Highlighter {
   constructor(t, e, i, s, h, o) {
-    this._highlightingAreas = [], this._width = 0, this._height = 0, this._currentZIndex = "auto", this._lastScrollingTimeStamp = 0, this._supportsCanvas = !0, this._touchStartDetails = null, this._onCEElementTouchStart = t => {
-      t.touches && t.touches[0] && (this._touchStartDetails = {
-        timestamp: Date.now(),
-        x: t.touches[0].clientX,
-        y: t.touches[0].clientY
-      })
-    }, this._onCEEElementTouchEnd = t => {
-      if (!t.changedTouches || 1 !== t.changedTouches.length) return;
-      if (!this._touchStartDetails) return;
-      const e = Date.now() - this._touchStartDetails.timestamp;
-      if (this._touchStartDetails = null, e > 300) return;
-      const i = t.changedTouches[0];
-      this._handleClick(t, i.clientX, i.clientY, !0)
-    }, this._onCEElementClick = t => {
-      const e = 0 === t.button;
-      ("click" === t.type || e) && (this._tweaks.isClickIgnored(t) || this._handleClick(t, t.clientX, t.clientY, !1))
-    }, this._handleClick = (t, e, i, s = !1) => {
+    this._highlightingAreas = []
+    this._width = 0
+    this._height = 0
+    this._currentZIndex = "auto"
+    this._lastScrollingTimeStamp = 0
+    this._supportsCanvas = !0
+    this._touchStartDetails = null
+    this._onCEElementTouchStart = t => {
+      // t.touches && t.touches[0] && (this._touchStartDetails = {
+      //   timestamp: Date.now(),
+      //   x: t.touches[0].clientX,
+      //   y: t.touches[0].clientY
+      // })
+    }
+    this._onCEEElementTouchEnd = t => {
+      // if (!t.changedTouches || 1 !== t.changedTouches.length) return;
+      // if (!this._touchStartDetails) return;
+      // const e = Date.now() - this._touchStartDetails.timestamp;
+      // if (this._touchStartDetails = null, e > 300) return;
+      // const i = t.changedTouches[0];
+      // this._handleClickDebounce.call(t, i.clientX, i.clientY, !0)
+    }
+    this._onCEElementClick = t => {
+      this._handleClickDebounce.call(t, t.clientX, t.clientY, !1)
+    }
+    this._handleClick = (t, e, i, s = !1) => {
       if (this._isMirror && t.stopImmediatePropagation(), !this._container) return;
       if (this._isHighlightingDisabled) return;
       this._domMeasurement.clearCache();
@@ -33,7 +42,24 @@ class Highlighter {
           return void (dispatchCustomEvent(document, Highlighter.eventNames.blockClicked, h) && s && t.preventDefault())
         }
       }
-    }, this._inputArea = t, this._inputAreaWrapper = e, this._element = i, this._isMirror = s, this._tweaks = h, this._clickEvent = o, this._highlightedText = "", this._highlightedBlocks = [], this._supportsCanvas = this._tweaks.supportsCanvas(), this._domMeasurement = new DomMeasurement(t.ownerDocument), this._onScrollableElementScroll = this._onScrollableElementScroll.bind(this), this._onContentChanged = this._onContentChanged.bind(this), this._redrawDebounce = new Debounce(this._redraw.bind(this), 250, 500), this._enableHighlightingDebounce = new Debounce(this.enableHighlighting.bind(this), this._tweaks.scrollingThrottleLimit || 0), this._tweaks.addScrollEventListener(this._onScrollableElementScroll), "standalone" === EnvironmentAdapter.getType() && BrowserDetector.isIOSTouchDevice() ? (this._element.addEventListener("touchstart", this._onCEElementTouchStart, !0), this._element.addEventListener("touchend", this._onCEEElementTouchEnd, !0)) : this._element.addEventListener(this._clickEvent, this._onCEElementClick, !0), this._element.addEventListener(Mirror.eventNames.click, this._onCEElementClick, !0), this._contentChangedObserver = this._tweaks.createMutationObserver(this._onContentChanged);
+    }
+    this._handleClickDebounce = new Debounce(this._handleClick.bind(this), 1000, 1000)
+    this._inputArea = t
+    this._inputAreaWrapper = e
+    this._element = i
+    this._isMirror = s
+    this._tweaks = h
+    this._clickEvent = o
+    this._highlightedText = ""
+    this._highlightedBlocks = []
+    this._supportsCanvas = this._tweaks.supportsCanvas()
+    this._domMeasurement = new DomMeasurement(t.ownerDocument)
+    this._onScrollableElementScroll = this._onScrollableElementScroll.bind(this)
+    this._onContentChanged = this._onContentChanged.bind(this)
+    this._redrawDebounce = new Debounce(this._redraw.bind(this), 250, 500)
+    this._enableHighlightingDebounce = new Debounce(this.enableHighlighting.bind(this), this._tweaks.scrollingThrottleLimit || 0)
+    this._tweaks.addScrollEventListener(this._onScrollableElementScroll)
+    "standalone" === EnvironmentAdapter.getType() && BrowserDetector.isIOSTouchDevice() ? (this._element.addEventListener("mouseenter", this._onCEElementTouchStart, !0), this._element.addEventListener("mouseover", this._onCEEElementTouchEnd, !0)) : this._element.addEventListener('mousemove', this._onCEElementClick, !0), this._element.addEventListener(Mirror.eventNames.click, this._onCEElementClick, !0), this._contentChangedObserver = this._tweaks.createMutationObserver(this._onContentChanged);
     const n = ["style"];
     this._tweaks.attributeMutations && n.push(...this._tweaks.attributeMutations), s || n.push("class", "size", "face", "align");
     const r = {
@@ -46,6 +72,38 @@ class Highlighter {
       subtree: void 0 === this._tweaks.observeSubtreeMutations ? !s : this._tweaks.observeSubtreeMutations
     };
     this._contentChangedObserver.observe(this._element, r), window.ResizeObserver && (this._ceElementResizeObserver = new window.ResizeObserver((() => this._render())), this._ceElementResizeObserver.observe(this._element)), this._renderInterval = setAnimationFrameInterval(this._render.bind(this), config.RENDER_INTERVAL), this._render()
+  }
+
+  throttle(func, wait, options) {
+    var context, args, result;
+    var timeout = null;
+    var previous = 0;
+    if (!options) options = {};
+    var later = function() {
+      previous = options.leading === false ? 0 : Date.now();
+      timeout = null;
+      result = func.apply(context, args);
+      if (!timeout) context = args = null;
+    };
+    return function() {
+      var now = Date.now();
+      if (!previous && options.leading === false) previous = now;
+      var remaining = wait - (now - previous);
+      context = this;
+      args = arguments;
+      if (remaining <= 0 || remaining > wait) {
+        if (timeout) {
+          clearTimeout(timeout);
+          timeout = null;
+        }
+        previous = now;
+        result = func.apply(context, args);
+        if (!timeout) context = args = null;
+      } else if (!timeout && options.trailing !== false) {
+        timeout = setTimeout(later, remaining);
+      }
+      return result;
+    };
   }
 
   _toPageCoordinates(t, e) {
