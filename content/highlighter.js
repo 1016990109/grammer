@@ -24,7 +24,7 @@ class Highlighter {
       // this._handleClickDebounce.call(t, i.clientX, i.clientY, !0)
     }
     this._onCEElementClick = t => {
-      this._handleClickDebounce.call(t, t.clientX, t.clientY, !1)
+      this._handleClickDebounce(t, t.clientX, t.clientY, !1)
     }
     this._handleClick = (t, e, i, s = !1) => {
       if (this._isMirror && t.stopImmediatePropagation(), !this._container) return;
@@ -33,10 +33,11 @@ class Highlighter {
       const errCard = document.querySelector("#plappy-card")
       let isInCard = false
       if (errCard) {
-        if (e >= errCard.offsetLeft &&
-          e <= errCard.offsetLeft + errCard.clientWidth &&
-          i >= errCard.offsetTop &&
-          i <= errCard.offsetTop + errCard.clientHeight
+        console.log(e, i, errCard.offsetLeft, errCard.offsetTop, errCard.offsetLeft + errCard.clientWidth, errCard.offsetTop + errCard.clientHeight)
+        if (e + 10 >= errCard.offsetLeft &&
+          e - 10 <= errCard.offsetLeft + errCard.clientWidth &&
+          i + 10 >= errCard.offsetTop &&
+          i - 10 <= errCard.offsetTop + errCard.clientHeight
         ) {
           isInCard = true;
         }
@@ -57,10 +58,13 @@ class Highlighter {
       if (!isInCard) {
         return void (dispatchCustomEvent(document, Highlighter.eventNames.blockCanceled, h) && s && t.preventDefault())
       } else {
+        console.log('in card!!!!')
         t.preventDefault()
       }
     }
-    this._handleClickDebounce = new Debounce(this._handleClick.bind(this), 500, 800)
+    this._handleClickDebounce = debounce(this._handleClick.bind(this), 1000, {
+      trailing: true
+    })
     this._inputArea = t
     this._inputAreaWrapper = e
     this._element = i
