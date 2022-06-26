@@ -29,6 +29,18 @@ class Highlighter {
     this._handleClick = (t, e, i, s = !1) => {
       if (this._isMirror && t.stopImmediatePropagation(), !this._container) return;
       if (this._isHighlightingDisabled) return;
+      // 判断鼠标位置是否在errorCard中
+      const errCard = document.querySelector("#plappy-card")
+      let isInCard = false
+      if (errCard) {
+        if (e >= errCard.offsetLeft &&
+          e <= errCard.offsetLeft + errCard.clientWidth &&
+          i >= errCard.offsetTop &&
+          i <= errCard.offsetTop + errCard.clientHeight
+        ) {
+          isInCard = true;
+        }
+      }
       this._domMeasurement.clearCache();
       let h = {x: e, y: i};
       h = this._toElementCoordinates(h, this._element);
@@ -42,7 +54,11 @@ class Highlighter {
           return void (dispatchCustomEvent(document, Highlighter.eventNames.blockClicked, h) && s && t.preventDefault())
         }
       }
-      return void (dispatchCustomEvent(document, Highlighter.eventNames.blockCanceled, h) && s && t.preventDefault())
+      if (!isInCard) {
+        return void (dispatchCustomEvent(document, Highlighter.eventNames.blockCanceled, h) && s && t.preventDefault())
+      } else {
+        t.preventDefault()
+      }
     }
     this._handleClickDebounce = new Debounce(this._handleClick.bind(this), 500, 800)
     this._inputArea = t
@@ -66,9 +82,13 @@ class Highlighter {
       this._element.addEventListener("touchend", this._onCEEElementTouchEnd, !0)
     } else {
       this._element.addEventListener('mousemove', this._onCEElementClick, !0)
-      document.querySelector(".kix-appview-editor").addEventListener('scroll', () => {
-        return void (dispatchCustomEvent(document, Highlighter.eventNames.blockCanceled, h) && s && t.preventDefault())
-      })
+      // google docs 添加滚动的事件，使得卡片会自动消失
+      const docsView = document.querySelector(".kix-appview-editor")
+      if (docsView) {
+        docsView.addEventListener('scroll', () => {
+          return void (dispatchCustomEvent(document, Highlighter.eventNames.blockCanceled, h) && s && t.preventDefault())
+        })
+      }
       this._element.addEventListener(this._clickEvent, this._onCEElementClick, !0)
       this._element.addEventListener(Mirror.eventNames.click, this._onCEElementClick, !0)
       this._contentChangedObserver = this._tweaks.createMutationObserver(this._onContentChanged)

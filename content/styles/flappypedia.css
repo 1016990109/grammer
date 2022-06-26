@@ -1,3 +1,8 @@
+*[contenteditable="true"] {
+    border: none;
+    outline: none;
+}
+
 #plappy-card {
     padding: 0 !important;
 }
