@@ -60,7 +60,19 @@ class Highlighter {
     this._redrawDebounce = new Debounce(this._redraw.bind(this), 250, 500)
     this._enableHighlightingDebounce = new Debounce(this.enableHighlighting.bind(this), this._tweaks.scrollingThrottleLimit || 0)
     this._tweaks.addScrollEventListener(this._onScrollableElementScroll)
-    "standalone" === EnvironmentAdapter.getType() && BrowserDetector.isIOSTouchDevice() ? (this._element.addEventListener("mouseenter", this._onCEElementTouchStart, !0), this._element.addEventListener("mouseover", this._onCEEElementTouchEnd, !0)) : this._element.addEventListener('mousemove', this._onCEElementClick, !0), this._element.addEventListener(this._clickEvent, this._onCEElementClick, !0), this._element.addEventListener(Mirror.eventNames.click, this._onCEElementClick, !0), this._contentChangedObserver = this._tweaks.createMutationObserver(this._onContentChanged);
+    if ("standalone" === EnvironmentAdapter.getType() && BrowserDetector.isIOSTouchDevice()) {
+      // 移动端
+      this._element.addEventListener("touchstart", this._onCEElementTouchStart, !0)
+      this._element.addEventListener("touchend", this._onCEEElementTouchEnd, !0)
+    } else {
+      this._element.addEventListener('mousemove', this._onCEElementClick, !0)
+      document.querySelector(".kix-appview-editor").addEventListener('scroll', () => {
+        return void (dispatchCustomEvent(document, Highlighter.eventNames.blockCanceled, h) && s && t.preventDefault())
+      })
+      this._element.addEventListener(this._clickEvent, this._onCEElementClick, !0)
+      this._element.addEventListener(Mirror.eventNames.click, this._onCEElementClick, !0)
+      this._contentChangedObserver = this._tweaks.createMutationObserver(this._onContentChanged)
+    }
     const n = ["style"];
     this._tweaks.attributeMutations && n.push(...this._tweaks.attributeMutations), s || n.push("class", "size", "face", "align");
     const r = {
