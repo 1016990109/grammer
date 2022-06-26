@@ -491,6 +491,7 @@ class BackgroundApp {
     };
     let result = WikiManager.matchWikiContent(t.text)
 
+    console.log("check text : "+t.text)
     return Promise.resolve({
       initialCommand: "CHECK_TEXT",
       isSuccessful: !0,

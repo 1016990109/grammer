@@ -844,6 +844,7 @@ class LTAssistant {
   }
 
   _checkEditor(e, t, r) {
+    console.log("check Editor")
     let i, o = !1;
     if (void 0 === t && void 0 === r ? (i = e.inputAreaWrapper.getText(), r = !1) : "boolean" == typeof t && void 0 === r ? (i = e.inputAreaWrapper.getText(), r = t) : "string" == typeof t && "boolean" == typeof r ? i = t : (i = e.inputAreaWrapper.getText(), o = t), !this._isConnected) return !0;
     if (!this._isRemoteCheckAllowed || !e.isAutoCheckEnabled) return !0;
