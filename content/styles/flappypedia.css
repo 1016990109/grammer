@@ -1,68 +1,73 @@
-.wiki-header {
+#plappy-card {
+    padding: 0 !important;
+}
+
+.wiki-header, #wiki-header {
     background: #F4F2FF !important;
     padding: 20px !important;
     display: flex !important;
+    flex-direction: column !important;
 }
 
-.wiki-title {
-    font-weight: 700;
-    font-size: 14px;
-    line-height: 20px;
-    color: #111111;
+.wiki-title, #wiki-title {
+    font-weight: 700 !important;
+    font-size: 14px !important;
+    line-height: 20px !important;
+    color: #111111 !important;
 }
 
-.wiki-sub-title {
-    font-weight: 400;
-    font-size: 12px;
-    line-height: 14px;
-    color: #111111;
+.wiki-sub-title, #wiki-sub-title {
+    font-weight: 400 !important;
+    font-size: 12px !important;
+    line-height: 14px !important;
+    color: #111111 !important;
 }
 
 .wiki-airplane {
 
 }
 
-.wiki-container {
-    padding: 20px;
+.wiki-container, #wiki-container {
+    padding: 20px !important;
 }
 
-.wiki-content {
-    max-height: 300px;
-    overflow: scroll;
+.wiki-content, #wiki-content {
+    max-height: 300px !important;
+    overflow: scroll !important;
 }
 
-.wiki-text {
-    font-weight: 400;
-    font-size: 12px;
+.wiki-text, #wiki-text {
+    font-weight: 400 !important;
+    font-size: 12px !important;
 }
 
-.show-all {
-    float: right;
-    color: #C4C4C4;
-    cursor: pointer;
+.show-all, #show-all {
+    float: right !important;
+    color: #C4C4C4 !important;
+    cursor: pointer !important;
 }
 
-.wiki-tag {
-    background: #7B61FF;
-    border-radius: 2px;
-    font-weight: 600;
-    font-size: 6px;
-    margin-right: 10px;
-    color: white;
-    padding: 2px 4px;
+.wiki-tag, #wiki-tag {
+    background: #7B61FF !important;
+    border-radius: 2px !important;
+    font-weight: 600 !important;
+    font-size: 6px !important;
+    margin-right: 10px !important;
+    color: white !important;
+    padding: 2px 4px !important;
 }
 
-.wiki-link {
-    font-weight: 400;
-    font-size: 12px;
-    line-height: 20px;
-    color: #3384FC;
+.wiki-link, #wiki-link {
+    font-weight: 400 !important;
+    font-size: 12px !important;
+    line-height: 20px !important;
+    color: #3384FC !important;
 }
 
-.relate-title {
-    color: #111111;
-    font-weight: 700;
-    font-size: 12px;
-    line-height: 20px;
-    margin: 10px 0;
+.relate-title, #relate-title {
+    color: #111111 !important;
+    font-weight: 700 !important;
+    font-size: 12px !important;
+    line-height: 20px !important;
+    margin: 10px 0 !important;
 }

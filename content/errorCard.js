@@ -51,6 +51,7 @@ class ErrorCard {
     this._container.style.display = "none"
     this._container.setAttribute("data-lt-adjust-appearance", "true")
     this._container.classList.add("lt-error-card")
+    this._container.classList.add("flappy")
     this._container.addEventListener("click", (e => e.stopPropagation()))
     hasDarkBackground(this._inputArea) ? this._container.setAttribute("data-lt-force-appearance", "dark") : this._container.setAttribute("data-lt-force-appearance", "light")
     this._eventListeners.push(
@@ -63,6 +64,7 @@ class ErrorCard {
       addUseCaptureEvent(this._container, "pointerup", (e => e.stopImmediatePropagation())))
     const t = this._document.createElement("lt-div");
     t.classList.add("lt-card__container")
+    t.id = 'plappy-card'
     t.classList.add("lt-card__container--error-card")
     t.classList.add("notranslate")
     this._renderContent(t)
@@ -98,27 +100,34 @@ class ErrorCard {
     const wikiInfo = (JSON.parse(this._error.description || '{}')).info
     const wikiHeader = this._document.createElement('lt-div')
     wikiHeader.classList.add('wiki-header')
+    wikiHeader.id = 'wiki-header'
     const wikiTitle = this._document.createElement('lt-div')
     wikiTitle.classList.add('wiki-title')
+    wikiTitle.id = 'wiki-title'
     wikiTitle.innerHTML = wikiInfo.name
     wikiHeader.appendChild(wikiTitle)
     const wikiSubTitle = this._document.createElement('lt-div')
     wikiSubTitle.classList.add('wiki-sub-title')
+    wikiSubTitle.id = 'wiki-sub-title'
     wikiSubTitle.innerHTML = wikiInfo.fullName
     wikiHeader.appendChild(wikiSubTitle)
     e.appendChild(wikiHeader)
 
     const content = this._document.createElement('lt-div')
     content.classList.add('wiki-container')
+    content.id = 'wiki-container'
     const wikiContent = this._document.createElement('lt-div')
     wikiContent.classList.add('wiki-content')
+    wikiContent.id = 'wiki-content'
     const wikiText = this._document.createElement('lt-div')
     wikiText.innerHTML = wikiInfo.content
     wikiText.classList.add('wiki-text')
+    wikiText.id = 'wiki-text'
     wikiContent.appendChild(wikiText)
     const showAll = this._document.createElement('lt-div')
     showAll.innerHTML = 'show all ↓'
     showAll.classList.add('show-all')
+    showAll.id = 'show-all'
     showAll.onclick = function (e) {
       wikiText.innerHTML = wikiInfo.detail
     }
@@ -128,6 +137,7 @@ class ErrorCard {
     const relateLinks = this._document.createElement('lt-div')
     relateLinks.innerHTML = 'Related Links'
     relateLinks.classList.add('relate-title')
+    relateLinks.id = 'relate-title'
     content.appendChild(relateLinks)
 
     for (let i = 0; i < wikiInfo.links.length; i++) {
@@ -146,6 +156,7 @@ class ErrorCard {
     const relatePeople = this._document.createElement('lt-div')
     relatePeople.innerHTML = 'Related People'
     relatePeople.classList.add('relate-title')
+    relatePeople.id = 'relate-title'
     content.appendChild(relatePeople)
     for (let i = 0; i < wikiInfo.people.length; i++) {
       try {
@@ -153,6 +164,7 @@ class ErrorCard {
         const peopleTitle = this._document.createElement('span')
         peopleTitle.innerHTML = people.name
         peopleTitle.classList.add('wiki-tag')
+        peopleTitle.id = 'wiki-tag'
         content.appendChild(peopleTitle)
       } catch (e) {
         console.error(e)
