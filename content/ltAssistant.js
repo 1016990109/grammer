@@ -43,29 +43,37 @@ const rolloutSegment = function (e, t) {
   }
 };
 
+const gmailSelector = "[name='messageBodySection']"
+
 class LTAssistant {
   constructor(e = {}, t = TweaksManager.DEFAULT_SITE_TWEAKS) {
     this.hasMessageBody = false
     // gmail 从无到有，需要触发一次检测
     setInterval(() => {
       // 从无到有
-      const gmailViewEl = document.querySelector("[name='messageBodySection']")
+      const gmailViewEl = document.querySelector(gmailSelector)
       if (gmailViewEl && !this.hasMessageBody) {
         this.gmailCheckInterval = setInterval(() => {
-          const gmailViewEl = document.querySelector("[name='messageBodySection']")
+          const gmailViewEl = document.querySelector(gmailSelector)
           if (gmailViewEl) {
             gmailViewEl.setAttribute('contenteditable', true)
             gmailViewEl.focus()
+            setTimeout(() => {
+              clearInterval(this.gmailCheckInterval)
+            }, 1000 * 3)
           }
         }, 1000)
         this.hasMessageBody = true
       } else if (!gmailViewEl && this.hasMessageBody) {
         // 消失
         this.gmailCheckInterval = setInterval(() => {
-          const gmailViewEl = document.querySelector("[name='messageBodySection']")
+          const gmailViewEl = document.querySelector(gmailSelector)
           if (gmailViewEl) {
             gmailViewEl.setAttribute('contenteditable', true)
             gmailViewEl.focus()
+            setTimeout(() => {
+              clearInterval(this.gmailCheckInterval)
+            }, 1000 * 3)
           }
         }, 1000)
         this.hasMessageBody = false
@@ -986,7 +994,7 @@ class LTAssistant {
     n = ErrorProcessor.migrateErrorsBetweenTexts(n, t.text, h.text), n = ErrorProcessor.migrateErrorsToOriginalText(n, h.usedParts), this._updateDisplayedErrors(i, h, n, a), 0 === i.pendingErrors.length && this._endTypingMode(i);
     const u = !1 === o && !0 === i.needsLanguageHintFromUser, p = !0 === o && !1 === i.needsLanguageHintFromUser;
     u ? i.highlighter.disableHighlighting() : p && i.highlighter.enableHighlighting(), this._highlight(i), this._updateState(i)
-    const gmailViewEl = document.querySelector("[name='messageBodySection']")
+    const gmailViewEl = document.querySelector(gmailSelector)
     if (gmailViewEl) {
       clearInterval(this.gmailCheckInterval)
       gmailViewEl.setAttribute('contenteditable', false)
