@@ -69,7 +69,59 @@ class LTAssistant {
           this._initElement(e, t)
         })), BrowserDetector.isChromium() && window.innerHeight > 14 && (this._fixTinyMCEIntervalId = window.setInterval((() => {
           this._fixIframeWithoutContentScripts()
-        }), config.IFRAME_INITILIZATION_RECHECK_INTERVAL)), window.addEventListener("pageshow", this._onPageLoaded), window.addEventListener("pagehide", this._onPageHide), document.addEventListener("focus", this._onDocumentFocus, !0), document.addEventListener("mousemove", this._onDocumentMousemove, !0), document.addEventListener("focusout", this._onDocumentFocusout, !0), document.addEventListener(this._tweaks.getClickEvent(), this._onDocumentClick, !0), window.frameElement && window.frameElement.ownerDocument && window.frameElement.ownerDocument.addEventListener("click", this._onDocumentClick, !0), document.addEventListener(LTAssistant.events.DESTROY, this._onDestroy), document.addEventListener(InputAreaWrapper.eventNames.scroll, this._onInputScroll), document.addEventListener(InputAreaWrapper.eventNames.paste, this._onInputPaste), document.addEventListener(InputAreaWrapper.eventNames.textChanged, this._onInputTextChanged), document.addEventListener(InputAreaWrapper.eventNames.dblclick, this._onInputDblClick), document.addEventListener(InputAreaWrapper.eventNames.dblPress, this._onInputDblPress), document.addEventListener(Highlighter.eventNames.blockClicked, this._onHiglighterBlockClicked), document.addEventListener(Toolbar.eventNames.permissionRequiredIconClicked, this._onToolbarPermissionRequiredIconClicked), document.addEventListener(Toolbar.eventNames.toggleDialog, this._onToolbarToggleDialog), document.addEventListener(Toolbar.eventNames.notifyAboutPremiumIcon, this._onToolbarNotifyAboutPremiumIcon), document.addEventListener(Dialog.eventNames.positionChangeClicked, this._onPositionChangeClicked), document.addEventListener(Dialog.eventNames.enableHere, this._onDialogEnableHere), document.addEventListener(Dialog.eventNames.togglePickyMode, this._onPickyModeToggle), document.addEventListener(Dialog.eventNames.enableEverywhere, this._onDialogEnableEverywhere), document.addEventListener(Dialog.eventNames.languageChanged, this._onDialogLanguageChanged), document.addEventListener(Dialog.eventNames.countChanged, this._onDialogCountChanged), document.addEventListener(Dialog.eventNames.errorSelected, this._onDialogErrorSelected), document.addEventListener(Dialog.eventNames.errorHighlighted, this._onDialogErrorHighlighted), document.addEventListener(Dialog.eventNames.addToDictionaryClicked, this._onAddToDictionary), document.addEventListener(Dialog.eventNames.ignoreRuleClicked, this._onIgnoreRule), document.addEventListener(Dialog.eventNames.temporarilyIgnoreWordClicked, this._onTemporarilyIgnoreWord), document.addEventListener(Dialog.eventNames.temporarilyIgnoreRuleClicked, this._onTemporarilyIgnoreRule), document.addEventListener(Dialog.eventNames.moreDetailsClicked, this._onMoreDetailsClicked), document.addEventListener(Dialog.eventNames.fixSelected, this._onFixSelected), document.addEventListener(Dialog.eventNames.openOptions, this._onDialogOpenOptions), document.addEventListener(Dialog.eventNames.showFeedbackForm, this._onDialogShowFeedbackForm), document.addEventListener(Dialog.eventNames.destroyed, this._onDialogDestroyed), document.addEventListener(Dialog.eventNames.badgeClicked, this._onBadgeClicked), document.addEventListener(Dialog.eventNames.turnOff, this._onTurnOffClicked), document.addEventListener(Dialog.eventNames.pauseChecking, this._onPauseCheckingClicked), document.addEventListener(Dialog.eventNames.premiumTeaserClicked, this._onDialogPremiumTeaserClicked), document.addEventListener(Dialog.eventNames.correctAll, this._onCorrectAll), document.addEventListener(ErrorCard.eventNames.addToDictionaryClicked, this._onAddToDictionary), document.addEventListener(ErrorCard.eventNames.ignoreRuleClicked, this._onIgnoreRule), document.addEventListener(ErrorCard.eventNames.temporarilyIgnoreWordClicked, this._onTemporarilyIgnoreWord), document.addEventListener(ErrorCard.eventNames.temporarilyIgnoreRuleClicked, this._onTemporarilyIgnoreRule), document.addEventListener(ErrorCard.eventNames.moreDetailsClicked, this._onMoreDetailsClicked), document.addEventListener(ErrorCard.eventNames.fixSelected, this._onFixSelected), document.addEventListener(ErrorCard.eventNames.badgeClicked, this._onBadgeClicked), document.addEventListener(ErrorCard.eventNames.logoClicked, this._onErrorCardLogoClicked), document.addEventListener(ErrorCard.eventNames.languageChanged, this._onErrorCardLanguageChanged), document.addEventListener(ErrorCard.eventNames.turnOffPickyModeClicked, this._onErrorCardPickyModeTurnedOff), document.addEventListener(ErrorCard.eventNames.premiumTeaserClicked, this._onErrorCardPremiumTeaserClicked), document.addEventListener(ErrorCard.eventNames.destroyed, this._onErrorCardDestroyed), document.addEventListener(ErrorCard.eventNames.correctAll, this._onCorrectAll), document.addEventListener(RephraseCard.eventNames.synonymSelected, this._onSynonymSelected), document.addEventListener(RephraseCard.eventNames.phraseSelected, this._onPhraseSelected), document.addEventListener(RephraseCard.eventNames.logoClicked, this._onRephraseCardLogoClicked), document.addEventListener(RephraseCard.eventNames.destroyed, this._onRephraseCardDestroyed), document.addEventListener(RephraseCard.eventNames.highlight, this._onRephraseCardHighlight), document.addEventListener(RephraseCard.eventNames.flashSentence, this._onRephraseCardFlashSentence), document.addEventListener(MessagePopup.eventNames.destroyed, this._onMessagePopupDestroyed), document.addEventListener(MessagePopup.eventNames.turnOn, this._onTurnOnClicked), this._storageController.addEventListener(StorageControllerClass.eventNames.settingsChanged, this._onSettingsChanged), this._storageController.addEventListener(StorageControllerClass.eventNames.privacySettingsChanged, this._onPrivacySettingsChanged), this._storageController.addEventListener(StorageControllerClass.eventNames.uiStateChanged, this._onUiStateChanged), this._options.onInit && this._options.onInit(this)
+        }), config.IFRAME_INITILIZATION_RECHECK_INTERVAL)), window.addEventListener("pageshow", this._onPageLoaded), window.addEventListener("pagehide", this._onPageHide), document.addEventListener("focus", this._onDocumentFocus, !0), document.addEventListener("mousemove", this._onDocumentMousemove, !0), document.addEventListener("focusout", this._onDocumentFocusout, !0), document.addEventListener(this._tweaks.getClickEvent(), this._onDocumentClick, !0), window.frameElement && window.frameElement.ownerDocument && window.frameElement.ownerDocument.addEventListener("click", this._onDocumentClick, !0), document.addEventListener(LTAssistant.events.DESTROY, this._onDestroy), document.addEventListener(InputAreaWrapper.eventNames.scroll, this._onInputScroll), document.addEventListener(InputAreaWrapper.eventNames.paste, this._onInputPaste), document.addEventListener(InputAreaWrapper.eventNames.textChanged, this._onInputTextChanged), document.addEventListener(InputAreaWrapper.eventNames.dblclick, this._onInputDblClick), document.addEventListener(InputAreaWrapper.eventNames.dblPress, this._onInputDblPress)
+        document.addEventListener(Highlighter.eventNames.blockClicked, this._onHiglighterBlockClicked)
+        document.addEventListener(Highlighter.eventNames.blockCanceled, this._onHiglighterBlockCanceled)
+        document.addEventListener(Toolbar.eventNames.permissionRequiredIconClicked, this._onToolbarPermissionRequiredIconClicked)
+        document.addEventListener(Toolbar.eventNames.toggleDialog, this._onToolbarToggleDialog)
+        document.addEventListener(Toolbar.eventNames.notifyAboutPremiumIcon, this._onToolbarNotifyAboutPremiumIcon)
+        document.addEventListener(Dialog.eventNames.positionChangeClicked, this._onPositionChangeClicked)
+        document.addEventListener(Dialog.eventNames.enableHere, this._onDialogEnableHere)
+        document.addEventListener(Dialog.eventNames.togglePickyMode, this._onPickyModeToggle)
+        document.addEventListener(Dialog.eventNames.enableEverywhere, this._onDialogEnableEverywhere)
+        document.addEventListener(Dialog.eventNames.languageChanged, this._onDialogLanguageChanged)
+        document.addEventListener(Dialog.eventNames.countChanged, this._onDialogCountChanged)
+        document.addEventListener(Dialog.eventNames.errorSelected, this._onDialogErrorSelected)
+        document.addEventListener(Dialog.eventNames.errorHighlighted, this._onDialogErrorHighlighted)
+        document.addEventListener(Dialog.eventNames.addToDictionaryClicked, this._onAddToDictionary)
+        document.addEventListener(Dialog.eventNames.ignoreRuleClicked, this._onIgnoreRule)
+        document.addEventListener(Dialog.eventNames.temporarilyIgnoreWordClicked, this._onTemporarilyIgnoreWord)
+        document.addEventListener(Dialog.eventNames.temporarilyIgnoreRuleClicked, this._onTemporarilyIgnoreRule)
+        document.addEventListener(Dialog.eventNames.moreDetailsClicked, this._onMoreDetailsClicked)
+        document.addEventListener(Dialog.eventNames.fixSelected, this._onFixSelected)
+        document.addEventListener(Dialog.eventNames.openOptions, this._onDialogOpenOptions)
+        document.addEventListener(Dialog.eventNames.showFeedbackForm, this._onDialogShowFeedbackForm)
+        document.addEventListener(Dialog.eventNames.destroyed, this._onDialogDestroyed)
+        document.addEventListener(Dialog.eventNames.badgeClicked, this._onBadgeClicked)
+        document.addEventListener(Dialog.eventNames.turnOff, this._onTurnOffClicked)
+        document.addEventListener(Dialog.eventNames.pauseChecking, this._onPauseCheckingClicked)
+        document.addEventListener(Dialog.eventNames.premiumTeaserClicked, this._onDialogPremiumTeaserClicked)
+        document.addEventListener(Dialog.eventNames.correctAll, this._onCorrectAll)
+        document.addEventListener(ErrorCard.eventNames.addToDictionaryClicked, this._onAddToDictionary)
+        document.addEventListener(ErrorCard.eventNames.ignoreRuleClicked, this._onIgnoreRule)
+        document.addEventListener(ErrorCard.eventNames.temporarilyIgnoreWordClicked, this._onTemporarilyIgnoreWord)
+        document.addEventListener(ErrorCard.eventNames.temporarilyIgnoreRuleClicked, this._onTemporarilyIgnoreRule)
+        document.addEventListener(ErrorCard.eventNames.moreDetailsClicked, this._onMoreDetailsClicked)
+        document.addEventListener(ErrorCard.eventNames.fixSelected, this._onFixSelected)
+        document.addEventListener(ErrorCard.eventNames.badgeClicked, this._onBadgeClicked)
+        document.addEventListener(ErrorCard.eventNames.logoClicked, this._onErrorCardLogoClicked)
+        document.addEventListener(ErrorCard.eventNames.languageChanged, this._onErrorCardLanguageChanged)
+        document.addEventListener(ErrorCard.eventNames.turnOffPickyModeClicked, this._onErrorCardPickyModeTurnedOff)
+        document.addEventListener(ErrorCard.eventNames.premiumTeaserClicked, this._onErrorCardPremiumTeaserClicked)
+        document.addEventListener(ErrorCard.eventNames.destroyed, this._onErrorCardDestroyed)
+        document.addEventListener(ErrorCard.eventNames.correctAll, this._onCorrectAll)
+        document.addEventListener(RephraseCard.eventNames.synonymSelected, this._onSynonymSelected)
+        document.addEventListener(RephraseCard.eventNames.phraseSelected, this._onPhraseSelected)
+        document.addEventListener(RephraseCard.eventNames.logoClicked, this._onRephraseCardLogoClicked)
+        document.addEventListener(RephraseCard.eventNames.destroyed, this._onRephraseCardDestroyed)
+        document.addEventListener(RephraseCard.eventNames.highlight, this._onRephraseCardHighlight)
+        document.addEventListener(RephraseCard.eventNames.flashSentence, this._onRephraseCardFlashSentence)
+        document.addEventListener(MessagePopup.eventNames.destroyed, this._onMessagePopupDestroyed)
+        document.addEventListener(MessagePopup.eventNames.turnOn, this._onTurnOnClicked)
+        this._storageController.addEventListener(StorageControllerClass.eventNames.settingsChanged, this._onSettingsChanged)
+        this._storageController.addEventListener(StorageControllerClass.eventNames.privacySettingsChanged, this._onPrivacySettingsChanged)
+        this._storageController.addEventListener(StorageControllerClass.eventNames.uiStateChanged, this._onUiStateChanged)
+        this._options.onInit && this._options.onInit(this)
       }
     }, this._checkExtensionRuntimeHealth = () => {
       EnvironmentAdapter.isRuntimeConnected() || this._handleUnhealthyExtensionRuntime()
@@ -154,7 +206,8 @@ class LTAssistant {
           this._showRephraseCard(i, o, e, !0)
         }
       }
-    }, this._onHiglighterBlockClicked = e => {
+    }
+    this._onHiglighterBlockClicked = e => {
       if (e.detail.blockId === RephraseCard.BLOCK_ID) return void e.preventDefault();
       this._hideAllErrorCards(), this._hideAllRephraseCards(), this._hideAllDialogs();
       const t = this._editors.find((t => t.highlighter === e.detail.highlighter));
@@ -167,7 +220,11 @@ class LTAssistant {
       t.selectedErrorId = r.id;
       let i = !1;
       t.callbacks.onErrorClick && (i = t.callbacks.onErrorClick(r)), i || this._showErrorCard(t, r, e.detail.clickedBox), this._highlight(t)
-    }, this._onToolbarPermissionRequiredIconClicked = () => {
+    }
+    this._onHiglighterBlockCanceled = e => {
+      this._hideAllErrorCards(), this._hideAllRephraseCards(), this._hideAllDialogs();
+    }
+    this._onToolbarPermissionRequiredIconClicked = () => {
       EnvironmentAdapter.openWindow(config.INSTALL_URL), Tracker.trackEvent("Action", "toolbar:open_install_url")
     }, this._onToolbarToggleDialog = e => {
       const t = this._editors.find((t => t.toolbar === e.detail.toolbar));
@@ -215,8 +272,7 @@ class LTAssistant {
       t && this._togglePickyMode(t, e.detail.isEnabled)
     }, this._onDialogEnableEverywhere = e => {
       this._storageController.updateSettings({
-        autoCheck: !0,
-        ignoreCheckOnDomains: []
+        autoCheck: !0, ignoreCheckOnDomains: []
       }), Tracker.trackEvent("Action", "enable_everywhere")
     }, this._onDialogLanguageChanged = e => {
       const t = this._editors.find((t => t.dialog === e.detail.dialog));
@@ -398,10 +454,7 @@ class LTAssistant {
       const r = e.detail.word, i = r.replace(r.trim(), e.detail.synonym),
         o = e.detail.selection.end || e.detail.selection.start;
       t.inputAreaTweaks.applyFix({
-        offset: e.detail.selection.start,
-        length: o - e.detail.selection.start,
-        replacementText: i,
-        editor: t
+        offset: e.detail.selection.start, length: o - e.detail.selection.start, replacementText: i, editor: t
       }), this._temporarilyIgnoreWord(t, e.detail.synonym), wait(100).then((() => t.checkDebounce.callImmediately()));
       const {appliedSynonyms: n} = this._storageController.getStatistics();
       this._storageController.updateStatistics({appliedSynonyms: n + 1}), Tracker.trackEvent("Action", "synonyms:applied")
@@ -410,10 +463,7 @@ class LTAssistant {
       if (!t) return;
       const {selection: r, phrase: i} = e.detail;
       t.inputAreaTweaks.applyFix({
-        offset: r.start,
-        length: r.end - e.detail.selection.start,
-        replacementText: i,
-        editor: t
+        offset: r.start, length: r.end - e.detail.selection.start, replacementText: i, editor: t
       }), wait(100).then((() => t.checkDebounce.callImmediately())), wait(500).then((() => {
         var e, r;
         return UndoNotification.create({
@@ -459,11 +509,7 @@ class LTAssistant {
     }, this._onRephraseCardFlashSentence = e => {
       const t = this._editors.find((t => t.rephraseCard === e.detail.rephraseCard));
       t && this._flashHighlight({
-        offset: e.detail.offset,
-        length: e.detail.length,
-        duration: e.detail.duration,
-        color: e.detail.color,
-        editor: t
+        offset: e.detail.offset, length: e.detail.length, duration: e.detail.duration, color: e.detail.color, editor: t
       })
     }, this._onDestroy = e => {
       e.detail && "type" in e.detail && e.detail.type ? e.detail.type === EnvironmentAdapter.getType() && this.destroy() : this.destroy()
@@ -487,8 +533,7 @@ class LTAssistant {
 
   static _getChangedParagraphs(e, t) {
     return getParagraphsDiff(e, t).filter((e => e.oldText !== e.newText && null !== e.newText)).map((e => ({
-      text: e.newText,
-      offset: e.newOffset
+      text: e.newText, offset: e.newOffset
     })))
   }
 
@@ -661,16 +706,13 @@ class LTAssistant {
       this._storageController.updateSettings(t)
     }
     this._options.motherTongue && this._storageController.updateSettings({motherTongue: e.motherTongue}), this._options.preferredLanguages && this._storageController.updateSettings({
-      geoIpLanguages: e.preferredLanguages,
-      preferredLanguages: e.preferredLanguages
+      geoIpLanguages: e.preferredLanguages, preferredLanguages: e.preferredLanguages
     })
   }
 
   updateUser(e) {
     this._storageController.updateSettings({
-      username: e.email,
-      token: e.token,
-      apiServerUrl: e.apiServerUrl || config.PREMIUM_SERVER_URL
+      username: e.email, token: e.token, apiServerUrl: e.apiServerUrl || config.PREMIUM_SERVER_URL
     }), e.premium && this._storageController.updateUIState({hasPaidSubscription: !0})
   }
 
@@ -692,8 +734,7 @@ class LTAssistant {
       }
     }));
     o.observe(e, {
-      attributes: !0,
-      attributeFilter: ["spellcheck", "data-gramm"]
+      attributes: !0, attributeFilter: ["spellcheck", "data-gramm"]
     }), this._spellcheckingAttributesData.set(e, {originalValues: t, mutationObserver: o})
   }
 
@@ -791,8 +832,7 @@ class LTAssistant {
   _getCountOptions(e, t) {
     const r = new TextStatistics(e);
     return {
-      mode: t,
-      counts: {characters: e.length, sentences: r.getAllSentences().length, words: r.getAllWords().length}
+      mode: t, counts: {characters: e.length, sentences: r.getAllSentences().length, words: r.getAllWords().length}
     }
   }
 
@@ -877,8 +917,7 @@ class LTAssistant {
         t.isSuccessful ? this._onCheckCompleted(t, o, g) : this._onCheckFailed(t)
       } catch (t) {
         e.isChecking = !1, console.error(t), Tracker.trackError("message", t.message, "CHECK_TEXT"), t.message && isExtensionRuntimeError(t.message) ? this._handleUnhealthyExtensionRuntime() : (e.checkError = {
-          reason: "UnknownError",
-          status: 0
+          reason: "UnknownError", status: 0
         }, this._updateState(e))
       }
     }))
@@ -893,11 +932,7 @@ class LTAssistant {
     if (i.checkError = null, i.isChecking = !1, i.lastCheckTimestamp = r, e.isUnsupportedLanguage) return this._resetEditor(i), this._endTypingMode(i), i.language = null, i.isLanguageSupported = !1, i.checkedText = t, this._highlight(i), void this._updateState(i);
     if (e.language && !i.language && (i.language = e.language), t.originalText.length > config.MIN_TEXT_LENGTH && (i.tracking.languageCode = e.language ? e.language.code : null, i.tracking.hasEnoughText = !0), i.tracking.maxTextLength = Math.max(t.originalText.length, i.tracking.maxTextLength), e.language && i.dialog && i.dialog.setCurrentLanguage(e.language.code), e.language && e.language.code.toLowerCase() !== i.language.code.toLowerCase()) return this._resetEditor(i), i.language = e.language, this._checkEditor(i), this._highlight(i), void this._updateState(i);
     let {
-      errors: n,
-      pickyErrors: s,
-      premiumErrors: a,
-      premiumPickyErrors: d,
-      sentenceRanges: l
+      errors: n, pickyErrors: s, premiumErrors: a, premiumPickyErrors: d, sentenceRanges: l
     } = ErrorProcessor.merge({
       existing: {
         errors: i.errors,
@@ -905,24 +940,20 @@ class LTAssistant {
         premiumErrors: i.premiumErrors,
         premiumPickyErrors: i.premiumPickyErrors,
         sentenceRanges: i.sentenceRanges
-      },
-      new: {
+      }, new: {
         textLevel: {
           errors: e.textLevelErrors,
           pickyErrors: e.textLevelPickyErrors,
           premiumErrors: e.textLevelPremiumErrors,
           premiumPickyErrors: e.textLevelPremiumPickyErrors
-        },
-        paragraphLevel: {
+        }, paragraphLevel: {
           errors: e.paragraphLevelErrors,
           pickyErrors: e.paragraphLevelPickyErrors,
           premiumErrors: e.paragraphLevelPremiumErrors,
           premiumPickyErrors: e.paragraphLevelPremiumPickyErrors,
           sentenceRanges: e.paragraphLevelSentenceRanges
         }
-      },
-      existingCheckedText: i.checkedText,
-      newCheckedText: t
+      }, existingCheckedText: i.checkedText, newCheckedText: t
     }, i.makePickyPremium && !this._storageController.getUIState().hasPaidSubscription);
     i.checkedText = t, i.errors = n, i.pickyErrors = s, i.premiumErrors = a, i.premiumPickyErrors = d, i.isIncompleteResult = e.isIncompleteResult, i.needsLanguageHintFromUser = !1 === i.forceLanguage && this._needsLanguageHintFromUser(n, t.text), i.sentenceRanges = l, n = ErrorProcessor.migrateErrorsToValuableText(n, t.usedParts);
     const c = i.inputAreaWrapper.getText(), g = i.inputAreaTweaks.getReplacedParts(c), h = getValuableText(c, g);
@@ -1105,12 +1136,7 @@ class LTAssistant {
   _showRephraseCard(e, t, r, i = !1) {
     EnvironmentAdapter.isRuntimeConnected() && waitFor((() => e.language ? e.language.code : e.isTextTooShort ? LanguageManager.getUserLanguageCodes()[0] || "en" : e.errors[0] ? e.errors[0].language.code : void 0)).then((o => {
       const {
-        username: n,
-        motherTongue: s,
-        geoIpCountry: a,
-        preferredLanguages: d,
-        dpaLevel: l,
-        confirmedGPT3: c
+        username: n, motherTongue: s, geoIpCountry: a, preferredLanguages: d, dpaLevel: l, confirmedGPT3: c
       } = this._storageController.getSettings();
       e.rephraseCard = new RephraseCard(this._storageController.getUniqueId(), e.inputArea, e.inputAreaWrapper.getText(), e.sentenceRanges, t, r, o, s, d, l, c, hasGrammarMistakes(e), hasSpellingMistakes(e), {
         hasSubscription: this._storageController.getUIState().hasPaidSubscription,
@@ -1191,8 +1217,7 @@ class LTAssistant {
     if (!e.displayedHiddenErrorCount || !EnvironmentAdapter.isRuntimeConnected()) return;
     const t = (new Date).toDateString(), {hiddenErrors: r} = this._storageController.getStatistics();
     r[0] && r[0].day === t ? r[0].count += e.displayedHiddenErrorCount : r.unshift({
-      day: t,
-      count: e.displayedHiddenErrorCount
+      day: t, count: e.displayedHiddenErrorCount
     }), r.length = Math.min(r.length, 62), this._storageController.updateStatistics({hiddenErrors: r})
   }
 
@@ -1313,6 +1338,5 @@ class LTAssistant {
 }
 
 LTAssistant.events = {
-  UPDATE: "_lt-state-updated",
-  DESTROY: "_lt-destroy"
+  UPDATE: "_lt-state-updated", DESTROY: "_lt-destroy"
 }, LTAssistant.PUNCTIUATION_CHAR_REGEXP = /^[.!?]$/, LTAssistant.COMPLETED_SENTENCE_REGEXP = /^[^\n]*?[.!?]($|\s)/, LTAssistant.NO_LETTERS_REGEXP = /^[0-9,\.\-\:\;\+\*\/\\\%#\=\_]+$/, LTAssistant.TMP_ID_ATTRIBUTE_NAME = "data-lt-tmp-id";

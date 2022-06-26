@@ -42,8 +42,9 @@ class Highlighter {
           return void (dispatchCustomEvent(document, Highlighter.eventNames.blockClicked, h) && s && t.preventDefault())
         }
       }
+      return void (dispatchCustomEvent(document, Highlighter.eventNames.blockCanceled, h) && s && t.preventDefault())
     }
-    this._handleClickDebounce = new Debounce(this._handleClick.bind(this), 1000, 1000)
+    this._handleClickDebounce = new Debounce(this._handleClick.bind(this), 500, 800)
     this._inputArea = t
     this._inputAreaWrapper = e
     this._element = i
@@ -59,7 +60,7 @@ class Highlighter {
     this._redrawDebounce = new Debounce(this._redraw.bind(this), 250, 500)
     this._enableHighlightingDebounce = new Debounce(this.enableHighlighting.bind(this), this._tweaks.scrollingThrottleLimit || 0)
     this._tweaks.addScrollEventListener(this._onScrollableElementScroll)
-    "standalone" === EnvironmentAdapter.getType() && BrowserDetector.isIOSTouchDevice() ? (this._element.addEventListener("mouseenter", this._onCEElementTouchStart, !0), this._element.addEventListener("mouseover", this._onCEEElementTouchEnd, !0)) : this._element.addEventListener('mousemove', this._onCEElementClick, !0), this._element.addEventListener(Mirror.eventNames.click, this._onCEElementClick, !0), this._contentChangedObserver = this._tweaks.createMutationObserver(this._onContentChanged);
+    "standalone" === EnvironmentAdapter.getType() && BrowserDetector.isIOSTouchDevice() ? (this._element.addEventListener("mouseenter", this._onCEElementTouchStart, !0), this._element.addEventListener("mouseover", this._onCEEElementTouchEnd, !0)) : this._element.addEventListener('mousemove', this._onCEElementClick, !0), this._element.addEventListener(this._clickEvent, this._onCEElementClick, !0), this._element.addEventListener(Mirror.eventNames.click, this._onCEElementClick, !0), this._contentChangedObserver = this._tweaks.createMutationObserver(this._onContentChanged);
     const n = ["style"];
     this._tweaks.attributeMutations && n.push(...this._tweaks.attributeMutations), s || n.push("class", "size", "face", "align");
     const r = {
@@ -79,13 +80,13 @@ class Highlighter {
     var timeout = null;
     var previous = 0;
     if (!options) options = {};
-    var later = function() {
+    var later = function () {
       previous = options.leading === false ? 0 : Date.now();
       timeout = null;
       result = func.apply(context, args);
       if (!timeout) context = args = null;
     };
-    return function() {
+    return function () {
       var now = Date.now();
       if (!previous && options.leading === false) previous = now;
       var remaining = wait - (now - previous);
@@ -376,8 +377,26 @@ class Highlighter {
   }
 
   destroy() {
-    this._tweaks.removeScrollEventListener(this._onScrollableElementScroll), this._element.removeEventListener(this._clickEvent, this._onCEElementClick, !0), this._element.removeEventListener(Mirror.eventNames.click, this._onCEElementClick), this._element.removeEventListener("touchstart", this._onCEElementTouchStart, !0), this._element.removeEventListener("touchend", this._onCEEElementTouchEnd, !0), this._contentChangedObserver.disconnect(), this._renderInterval && this._renderInterval.destroy(), this._container && this._container.remove(), this._ceElementResizeObserver && this._ceElementResizeObserver.disconnect(), this._redrawDebounce.cancelCall(), this._enableHighlightingDebounce.cancelCall(), this._domMeasurement.clearCache()
+    this._tweaks.removeScrollEventListener(this._onScrollableElementScroll)
+    this._element.removeEventListener(this._clickEvent, this._onCEElementClick, !0)
+    this._element.removeEventListener(Mirror.eventNames.click, this._onCEElementClick)
+    this._element.removeEventListener("touchstart", this._onCEElementTouchStart, !0)
+    this._element.removeEventListener("touchend", this._onCEEElementTouchEnd, !0)
+    this._element.removeEventListener("mousemove", this._onCEEElementTouchEnd, !0)
+    this._contentChangedObserver.disconnect()
+    this._renderInterval && this._renderInterval.destroy()
+    this._container && this._container.remove()
+    this._ceElementResizeObserver && this._ceElementResizeObserver.disconnect()
+    this._redrawDebounce.cancelCall(), this._enableHighlightingDebounce.cancelCall()
+    this._domMeasurement.clearCache()
   }
 }
 
-Highlighter.CONTAINER_ELEMENT_NAME = "lt-highlighter", Highlighter.CANVAS_MAX_WIDTH = 1024, Highlighter.CANVAS_MAX_HEIGHT = 1024, Highlighter.LINE_WIDTH = 2, Highlighter.eventNames = {blockClicked: "lt-highlighter.blockClicked"};
+Highlighter.CONTAINER_ELEMENT_NAME = "lt-highlighter"
+Highlighter.CANVAS_MAX_WIDTH = 1024
+Highlighter.CANVAS_MAX_HEIGHT = 1024
+Highlighter.LINE_WIDTH = 2
+Highlighter.eventNames = {
+  blockClicked: "lt-highlighter.blockClicked",
+  blockCanceled: "lt-highlighter.blockCanceled",
+};
