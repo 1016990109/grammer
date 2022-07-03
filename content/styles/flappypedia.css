@@ -11,7 +11,14 @@
     background: #F4F2FF !important;
     padding: 20px !important;
     display: flex !important;
-    flex-direction: column !important;
+    flex-direction: row !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+}
+
+.title-container {
+    display: flex;
+    flex-direction: column;
 }
 
 .wiki-title, #wiki-title {
@@ -28,8 +35,18 @@
     color: #111111 !important;
 }
 
-.wiki-airplane {
+.wiki-airplane, #wiki-airplane {
+    background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMTUiIHZpZXdCb3g9IjAgMCAxNiAxNSIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cGF0aCBkPSJNNi41OTQgOC41MDNMMS43MDYgNS41MTRhLjg2NC44NjQgMCAwIDEgLjIxMS0xLjU2NkwxMy40NTcuNjE0YS44NjMuODYzIDAgMCAxIDEuMDY3IDEuMDc3TDExLjEgMTMuMTRhLjg2My44NjMgMCAwIDEtMS41NjUuMmwtMi45NC00LjgzOCIgc3Ryb2tlPSIjN0I2MUZGIiBzdHJva2Utd2lkdGg9IjEuMDc2IiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz48L3N2Zz4=');
+    background-repeat: no-repeat;
+    float: right;
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
 
+#wiki-airplane:hover {
+    color: rgba(127, 107, 255, 0.5);
 }
 
 .wiki-container, #wiki-container {

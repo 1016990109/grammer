@@ -98,19 +98,28 @@ class ErrorCard {
   _renderContent(e) {
     // render flappypedia 的卡片
     const wikiInfo = (JSON.parse(this._error.description || '{}')).info
-    const wikiHeader = this._document.createElement('lt-div')
+    const wikiHeader = this._document.createElement('div')
     wikiHeader.classList.add('wiki-header')
     wikiHeader.id = 'wiki-header'
-    const wikiTitle = this._document.createElement('lt-div')
+    const titleContainer = this._document.createElement('div')
+    titleContainer.classList.add('title-container')
+    const wikiTitle = this._document.createElement('div')
     wikiTitle.classList.add('wiki-title')
     wikiTitle.id = 'wiki-title'
     wikiTitle.innerHTML = wikiInfo.name
-    wikiHeader.appendChild(wikiTitle)
-    const wikiSubTitle = this._document.createElement('lt-div')
+    titleContainer.appendChild(wikiTitle)
+    const wikiSubTitle = this._document.createElement('div')
     wikiSubTitle.classList.add('wiki-sub-title')
     wikiSubTitle.id = 'wiki-sub-title'
     wikiSubTitle.innerHTML = wikiInfo.fullName
-    wikiHeader.appendChild(wikiSubTitle)
+    titleContainer.appendChild(wikiSubTitle)
+    wikiHeader.appendChild(titleContainer)
+    const flappyLink = this._document.createElement('a')
+    flappyLink.classList.add('wiki-airplane')
+    flappyLink.id = 'wiki-airplane'
+    flappyLink.href="https://hamilhong.work/console"
+    flappyLink.target = "_blank"
+    wikiHeader.appendChild(flappyLink)
     e.appendChild(wikiHeader)
 
     const content = this._document.createElement('lt-div')
@@ -134,40 +143,43 @@ class ErrorCard {
     wikiContent.appendChild(showAll)
     content.appendChild(wikiContent)
 
-    const relateLinks = this._document.createElement('lt-div')
-    relateLinks.innerHTML = 'Related Links'
-    relateLinks.classList.add('relate-title')
-    relateLinks.id = 'relate-title'
-    content.appendChild(relateLinks)
-
-    for (let i = 0; i < wikiInfo.links.length; i++) {
-      try {
-        const link = JSON.parse(wikiInfo.links[i])
-        const linkTitle = this._document.createElement('a')
-        linkTitle.href = link.link
-        linkTitle.target = '_blank'
-        linkTitle.innerHTML = link.title
-        content.appendChild(linkTitle)
-      } catch (e) {
-        console.error(e)
+    if (wikiInfo.links.length) {
+      const relateLinks = this._document.createElement('lt-div')
+      relateLinks.innerHTML = 'Related Links'
+      relateLinks.classList.add('relate-title')
+      relateLinks.id = 'relate-title'
+      content.appendChild(relateLinks)
+      for (let i = 0; i < wikiInfo.links.length; i++) {
+        try {
+          const link = JSON.parse(wikiInfo.links[i])
+          const linkTitle = this._document.createElement('a')
+          linkTitle.href = link.link
+          linkTitle.target = '_blank'
+          linkTitle.innerHTML = link.title
+          content.appendChild(linkTitle)
+        } catch (e) {
+          console.error(e)
+        }
       }
     }
 
-    const relatePeople = this._document.createElement('lt-div')
-    relatePeople.innerHTML = 'Related People'
-    relatePeople.classList.add('relate-title')
-    relatePeople.id = 'relate-title'
-    content.appendChild(relatePeople)
-    for (let i = 0; i < wikiInfo.people.length; i++) {
-      try {
-        const people = wikiInfo.people[i]
-        const peopleTitle = this._document.createElement('span')
-        peopleTitle.innerHTML = people.name
-        peopleTitle.classList.add('wiki-tag')
-        peopleTitle.id = 'wiki-tag'
-        content.appendChild(peopleTitle)
-      } catch (e) {
-        console.error(e)
+    if (wikiInfo.people.length) {
+      const relatePeople = this._document.createElement('lt-div')
+      relatePeople.innerHTML = 'Related People'
+      relatePeople.classList.add('relate-title')
+      relatePeople.id = 'relate-title'
+      content.appendChild(relatePeople)
+      for (let i = 0; i < wikiInfo.people.length; i++) {
+        try {
+          const people = wikiInfo.people[i]
+          const peopleTitle = this._document.createElement('span')
+          peopleTitle.innerHTML = people.name
+          peopleTitle.classList.add('wiki-tag')
+          peopleTitle.id = 'wiki-tag'
+          content.appendChild(peopleTitle)
+        } catch (e) {
+          console.error(e)
+        }
       }
     }
 
