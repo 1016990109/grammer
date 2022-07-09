@@ -33,7 +33,6 @@ class Highlighter {
       const errCard = document.querySelector("#plappy-card")
       let isInCard = false
       if (errCard) {
-        console.log(e, i, errCard.offsetLeft, errCard.offsetTop, errCard.offsetLeft + errCard.clientWidth, errCard.offsetTop + errCard.clientHeight)
         if (e + 10 >= errCard.offsetLeft &&
           e - 10 <= errCard.offsetLeft + errCard.clientWidth &&
           i + 10 >= errCard.offsetTop &&
@@ -284,7 +283,8 @@ class Highlighter {
       }
       if (t.isUnderlined) {
         let h = e.bottom - Highlighter.LINE_WIDTH / 2, o = e.bottom + Highlighter.LINE_WIDTH / 2;
-        o > i.height && (h -= 1, o -= 1), s.push({
+        o > i.height && (h -= 1, o -= 1)
+        s.push({
           top: h,
           right: e.right,
           bottom: o,
@@ -292,6 +292,7 @@ class Highlighter {
           width: e.width,
           height: Highlighter.LINE_WIDTH,
           color: t.underlineColor,
+          dashed: !t.isEmphasized,
           textBox: e
         })
       }
@@ -305,8 +306,18 @@ class Highlighter {
         continue
       }
       let i = {top: Number.MAX_VALUE, right: 0, bottom: 0, left: Number.MAX_VALUE, width: 0, height: 0};
-      for (const t of e) i.top = Math.min(i.top, t.top, t.textBox.top), i.right = Math.max(i.right, t.right, t.textBox.right), i.bottom = Math.max(i.bottom, t.bottom, t.textBox.bottom), i.left = Math.min(i.left, t.left, t.textBox.left);
-      i.top = Math.max(t.cell.top, i.top), i.right = Math.min(t.cell.right, i.right), i.bottom = Math.min(t.cell.bottom, i.bottom), i.left = Math.max(t.cell.left, i.left), i.width = i.right - i.left, i.height = i.bottom - i.top;
+      for (const t of e) {
+        i.top = Math.min(i.top, t.top, t.textBox.top)
+        i.right = Math.max(i.right, t.right, t.textBox.right)
+        i.bottom = Math.max(i.bottom, t.bottom, t.textBox.bottom)
+        i.left = Math.min(i.left, t.left, t.textBox.left)
+      }
+      i.top = Math.max(t.cell.top, i.top)
+      i.right = Math.min(t.cell.right, i.right)
+      i.bottom = Math.min(t.cell.bottom, i.bottom)
+      i.left = Math.max(t.cell.left, i.left)
+      i.width = i.right - i.left
+      i.height = i.bottom - i.top;
       const h = !t.canvasBox || t.canvasBox.width < i.width || t.canvasBox.height < i.height || t.canvasBox.width * t.canvasBox.height / (i.width * i.height) >= 2,
         o = !h && !isRectContainsRect(t.canvasBox, i);
       if (h) {
@@ -328,7 +339,8 @@ class Highlighter {
       for (const i of e) {
         const e = Math.max(i.left - t.canvasBox.left, 0), s = Math.min(i.right - t.canvasBox.left, t.canvasBox.width),
           h = Math.max(i.top - t.canvasBox.top, 0), o = Math.min(i.bottom - t.canvasBox.top, t.canvasBox.height),
-          r = s - e, a = o - h, l = {top: h, right: s, bottom: o, left: e, width: r, height: a, color: i.color},
+          r = s - e, a = o - h,
+          l = {top: h, right: s, bottom: o, left: e, width: r, height: a, color: i.color, dashed: i.dashed},
           c = {x: e, y: h, w: r, h: a, c: i.color};
         n.set(JSON.stringify(c), l)
       }
@@ -346,8 +358,19 @@ class Highlighter {
             const i = Math.max(t.top, e.top), s = Math.min(t.right, e.right), h = Math.min(t.bottom, e.bottom),
               o = Math.max(t.left, e.left), n = h - i;
             if (0 === s - o || 0 === n) continue;
-            const a = {top: i, right: s, bottom: h, left: o, width: s - o, height: h - i, color: t.color};
-            r.some((t => t.color === a.color && isRectsEqual(t, a))) || r.push(a)
+            const a = {
+              top: i,
+              right: s,
+              bottom: h,
+              left: o,
+              width: s - o,
+              height: h - i,
+              color: t.color,
+              dashed: t.dashed
+            };
+            if (!r.some((t => t.color === a.color && isRectsEqual(t, a)))) {
+              r.push(a)
+            }
           }
         }
       }
@@ -361,11 +384,69 @@ class Highlighter {
           if (isRectsIntersect(i, t)) {
             const e = Math.max(i.top, t.top), s = Math.min(i.right, t.right), h = Math.min(i.bottom, t.bottom),
               o = Math.max(i.left, t.left);
-            r.push({top: e, right: s, bottom: h, left: o, width: s - o, height: h - e, color: i.color})
+            r.push({
+              top: e,
+              right: s,
+              bottom: h,
+              left: o,
+              width: s - o,
+              height: h - e,
+              color: i.color,
+              dashed: i.dashed,
+            })
           }
         }
       }
-      for (const e of r) t.context.fillStyle = e.color, t.context.fillRect(e.left, e.top, e.width, e.height);
+      for (const e of r) {
+        if (e.height > 2) {
+          // 背景色加动画
+          if (false) {
+            // requestAnimationFrame 实现
+            let j = 0, delay = 1
+            let time, frame = -1
+            const loop = (timestamp) => {
+              if (!time) {
+                time = timestamp
+              }
+              const seg = Math.floor((timestamp - time) / delay);
+              if (seg > frame) {
+                frame = seg
+                t.context.fillStyle = e.color
+                t.context.fillRect(e.left + j, e.top, 1, e.height);
+                j++
+              }
+              if (j <= e.width) {
+                requestAnimationFrame(loop)
+              }
+            }
+            window.requestAnimationFrame(loop)
+          } else {
+            // setTimeout
+            let j = 0
+            const loop = () => {
+              t.context.fillStyle = e.color
+              t.context.fillRect(e.left + j, e.top, 1, e.height);
+              j++
+              if (j < e.width) {
+                requestAnimationFrame(loop)
+              }
+            }
+            window.requestAnimationFrame(loop)
+          }
+        } else {
+          // if (e.dashed) {
+          t.context.lineWidth = 2;
+          t.context.setLineDash([4, 2]);
+          t.context.strokeStyle = e.color
+          t.context.moveTo(e.left, e.top + 2);
+          t.context.lineTo(e.left + e.width, e.top + 2);
+          t.context.stroke();
+          // } else {
+          //   t.context.fillStyle = e.color
+          //   t.context.fillRect(e.left, e.top, e.width, e.height)
+          // }
+        }
+      }
       t.image && (t.image.src = t.canvas.toDataURL())
     }
   }

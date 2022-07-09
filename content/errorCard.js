@@ -117,7 +117,7 @@ class ErrorCard {
     const flappyLink = this._document.createElement('a')
     flappyLink.classList.add('wiki-airplane')
     flappyLink.id = 'wiki-airplane'
-    flappyLink.href="https://hamilhong.work/console"
+    flappyLink.href = "https://hamilhong.work/console"
     flappyLink.target = "_blank"
     wikiHeader.appendChild(flappyLink)
     e.appendChild(wikiHeader)
@@ -137,9 +137,17 @@ class ErrorCard {
     showAll.innerHTML = 'show all ↓'
     showAll.classList.add('show-all')
     showAll.id = 'show-all'
-    showAll.onclick = function (e) {
+    const showAllFunc = function (e) {
       wikiText.innerHTML = wikiInfo.detail
+      showAll.onclick = collapseFunc
+      showAll.innerHTML = 'collapse'
     }
+    const collapseFunc = function (e) {
+      wikiText.innerHTML = wikiInfo.content
+      showAll.onclick = showAllFunc
+      showAll.innerHTML = 'show all ↓'
+    }
+    showAll.onclick = showAllFunc
     wikiContent.appendChild(showAll)
     content.appendChild(wikiContent)
 

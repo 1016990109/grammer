@@ -2434,6 +2434,8 @@ html:not([data-lt-script-installed]):not(.__lt-dummy-1):not(.__lt-dummy-2):not(.
     animation: none !important;
     background: transparent !important;
     border: none !important;
+    /*border-bottom: 2px dashed #7B61FF !important;*/
+    transition: all 0.5s ease-in-out;
     pointer-events: none !important;
     box-shadow: initial !important;
     box-sizing: initial !important;
@@ -2452,6 +2454,10 @@ html:not([data-lt-script-installed]):not(.__lt-dummy-1):not(.__lt-dummy-2):not(.
     height: initial !important;
     width: initial !important;
     content-visibility: auto !important;
+}
+
+.lt-highlighter__canvas:hover {
+    border-bottom: 1px solid #7B61FF;
 }
 
 html:not([data-lt-script-installed]):not(.__lt-dummy-1):not(.__lt-dummy-2):not(.__lt-dummy-3):not(.__lt-dummy-4):not(.__lt-dummy-5):not(.__lt-dummy-6):not(.__lt-dummy-1654869771686) lt-toolbar {
