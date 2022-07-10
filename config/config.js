@@ -12,10 +12,10 @@ const config = {
   TOOLBAR_DECREASE_SIZE_INTERVAL: 900,
   CHECK_REQUEST_TIMEOUT: 5e4,
   CHECK_THROTTLING_LIMIT: 30,
-  INSTALL_URL: "https://hamilhong.work",
-  UNINSTALL_URL: "https://hamilhong.work",
-  USER_DATA_URL: "https://hamilhong.work/console",
-  BASE_SERVER_URL: "https://hamilhong.work",
+  INSTALL_URL: "https://flappypedia.com",
+  UNINSTALL_URL: "https://flappypedia.com",
+  USER_DATA_URL: "https://flappypedia.com/console",
+  BASE_SERVER_URL: "https://flappypedia.com",
   get MAIN_SERVER_URL() {
     return `${this.BASE_SERVER_URL}/v2`
   },
@@ -23,7 +23,7 @@ const config = {
   PREMIUM_SERVER_URL: "https://api.languagetoolplus.com/v2",
   PREMIUM_FALLBACK_SERVER_URL: "https://languagetoolplus.com/api/v2",
   LOCAL_SERVER_URL: "http://localhost:8081/v2",
-  FEEDBACK_SERVER_URL: "https://hamilhong.work/send-feedback/",
+  FEEDBACK_SERVER_URL: "https://flappypedia.com/send-feedback/",
   EXTERNAL_CONFIG_URL: "https://languagetool.org/webextension_config.json",
   CLIENT_LOGIN_URL: "https://languagetool.org/client-login",
   PING_URL: "https://languagetool.org/ping",

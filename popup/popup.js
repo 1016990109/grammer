@@ -32,7 +32,7 @@
   })), h.addEventListener("click", (() => EnvironmentAdapter.openFeedbackForm(e)));
   let k = StorageController.create();
   k.onReady((() => {
-    fetch('http://hamilhong.work').then(res => {
+    fetch('http://flappypedia.com').then(res => {
       console.log(res)
     })
     browser.tabs.query({currentWindow: !0, active: !0}).then((i => {

@@ -208,7 +208,7 @@ class ErrorCard {
     const flappyLink = this._document.createElement('a')
     flappyLink.classList.add('wiki-airplane')
     flappyLink.id = 'wiki-airplane'
-    flappyLink.href = "https://hamilhong.work/console"
+    flappyLink.href = "https://flappypedia.com/console"
     flappyLink.target = "_blank"
     rightHeaderContainer.appendChild(flappyLink)
     const spaceSelect = this._document.createElement('select')
