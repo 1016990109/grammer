@@ -1752,6 +1752,51 @@ lt-card .lt-package-badge.lt-package-badge--small {
    width: 24px;
    margin-right: 0px;
 }
+
+#flappy_pop_guide_1{
+    margin-left: 18px;
+    font-size: 15px;
+}
+#flappy_pop_guide_1_list{
+    margin-left: 18px;
+    margin-top: 17px;
+}
+
+#flappy_pop_guide_item_1{
+    display: flex;
+    align-items: center;
+}
+#flappy_pop_guide_item_1_img{
+    width: 35px;
+    height: 35px;
+    
+}
+#flappy_pop_guide_item_1_word{
+    margin-left: 12px;
+    font-size: 16px;
+    color: #000000;
+}
+#flappy_pop_guide_item_1_link{
+    color: #3384FC;
+}
+
+#flappy_pop_guide_item_2{
+    display: flex;
+    align-items: center;
+}
+#flappy_pop_guide_item_2_img{
+    width: 35px;
+    height: 35px;
+    
+}
+#flappy_pop_guide_item_2_word{
+    margin-left: 12px;
+    font-size: 16px;
+    color: #000000;
+}
+#flappy_pop_guide_item_2_link{
+    color: #3384FC;
+}
 body{
     width: 449px;
     background: none;
