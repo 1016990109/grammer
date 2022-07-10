@@ -5,14 +5,12 @@
 	"name": "__MSG_appName__",
 	"short_name": "Plappypedia",
 	"description": "__MSG_appDesc__",
-	"version": "5.3.0",
+	"version": "0.0.1",
 	"default_locale": "en",
 	"author": "",
 	"homepage_url": "https://flappypedia.com/",
 	"offline_enabled": false,
-
 	"minimum_chrome_version": "67.0.0",
-
 	"icons": {
 		"16": "/assets/images/flappy_logo.png",
 		"32": "/assets/images/flappy_logo.png",
