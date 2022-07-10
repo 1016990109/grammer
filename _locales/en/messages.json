@@ -23,7 +23,7 @@
   },
   "appDesc": {
     "description": "The description of the application, displayed in the web store.",
-    "message": "Check your texts for spelling and grammar problems everywhere on the web"
+    "message": "Check your texts whether containers wikis."
   },
   "appDescThunderbird": {
     "description": "The description of the application, displayed in the Thunderbird web store.",
@@ -31,7 +31,7 @@
   },
   "appName": {
     "description": "The name of the application, displayed in the web store.",
-    "message": "Grammar & Spell Checker — Plappypedia"
+    "message": "Enterprise-Wiki — Plappypedia"
   },
   "appStoreDesc1": {
     "description": "Description item 1 in Google Chrome Web Store (does not appear in the extension itself)",
