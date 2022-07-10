@@ -1754,6 +1754,7 @@ lt-card .lt-package-badge.lt-package-badge--small {
 }
 
 #flappy_pop_guide_1{
+    margin-top: 22px;
     margin-left: 18px;
     font-size: 15px;
 }
