@@ -1729,8 +1729,9 @@ lt-card .lt-package-badge.lt-package-badge--small {
     font-size: 16px;
 }
 #flappy_pop_feedback{
-    color: #7F6BFF;
+    color: #3384FC;
     font-size: 16px;
+    text-decoration: none;
 }
 .flappy_pop_footer{
     margin-top: 40px;
@@ -1779,6 +1780,7 @@ lt-card .lt-package-badge.lt-package-badge--small {
 }
 #flappy_pop_guide_item_1_link{
     color: #3384FC;
+    text-decoration: none;
 }
 
 #flappy_pop_guide_item_2{
