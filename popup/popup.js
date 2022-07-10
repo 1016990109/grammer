@@ -128,10 +128,20 @@
   BrowserDetector.isSafari() && (n.classList.add("lt-popup--safari"), L.href = L.href + (L.href.includes("?") ? "&" : "?") + "hidePremium=true"), BrowserDetector.isFirefox() && n.classList.add("lt-popup--firefox"), BrowserDetector.isThunderbird() && n.classList.add("lt-popup--thunderbird")
 }
 
-//flappy init
-loginGuide = document.getElementById("flappy_pop_guide")
-loginButton = document.getElementById("flappy_pop_login")
-FlappyAuth.getToken().then(()=>{
-  loginGuide.style.display= "none"
-  loginButton.style.display= "none"
-})
+setTimeout(()=>{
+   //flappy init
+   loginGuide = document.getElementById("flappy_pop_guide")
+   loginButton = document.getElementById("flappy_pop_login")
+
+   console.log("loginButton" + loginButton)
+   FlappyAuth.getToken().then(()=>{
+     loginGuide.style.display= "none"
+     loginButton.style.display= "none"
+   })
+   
+   loginButton.onclick = ()=>{
+     window.open("https://www.flappypedia.com")
+     window.close()
+   }
+},0)
+
