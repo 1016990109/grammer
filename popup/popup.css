@@ -1675,3 +1675,85 @@ lt-card .lt-package-badge.lt-package-badge--small {
 .lt-popup--safari .lt-popup__beta-sign {
     display: none;
 }
+
+.flappy_pop_header{
+    display: flex;
+    align-items: center;  
+    text-align: justify;
+    height: 68px;
+    max-width: 449px;
+    background-color: #7F6BFF;
+    /* border-radius: 8px 8px 0px 0px; */
+}
+.flappy_pop_title{
+    color: white;
+    margin-left: 18px;
+    font-style: normal;
+    font-size: 16px;
+    letter-spacing: 0.05em;
+}
+.flappy_pop_content{
+
+    
+}
+.flappy_pop_guide{
+    font-style: normal;
+    font-size: 15px;
+    color: #000000;
+}
+.flappy_pop_container{
+    border-radius: 8px 8px 8px 8px;
+
+}
+.flappy_pop_guide{
+    display: flex;
+    justify-content: center;
+    margin-top: 24px;
+    margin-bottom: 24px;
+}
+
+.flappy_pop_login{
+    display: flex;
+    justify-content: center;
+    background-color: #7F6BFF;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    margin-left: 18px;
+    margin-right: 18px;
+    border-radius: 8px;
+
+}
+
+.flappy_pop_login_button{
+    color: white;
+    font-size: 16px;
+}
+.flappy_pop_feedback{
+    color: #7F6BFF;
+    font-size: 16px;
+}
+.flappy_pop_footer{
+    margin-top: 40px;
+    /* border-top-color: #5e636e;
+    border-top-width: 0.5px;
+    border-top-style: solid; */
+
+    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 55px;
+    padding-left: 18px;
+    padding-right: 18px;
+    /* border-radius: 0px 0px 8px 8px; */
+}
+.flappy_pop_home{
+   height: 24px;
+   width: 24px;
+   margin-right: 0px;
+}
+body{
+    width: 449px;
+    background: none;
+   
+}
