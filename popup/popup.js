@@ -133,10 +133,16 @@ loginGuide = document.getElementById("flappy_pop_guide")
 loginButton = document.getElementById("flappy_pop_login")
 guideContainer = document.getElementById("flappy_pop_content_login")
 guideContainer.style.display = "none"
+loginGuide.style.display= "none"
+loginButton.style.display= "none"
 FlappyAuth.getToken().then(()=>{
   loginGuide.style.display= "none"
   loginButton.style.display= "none"
   guideContainer.style.display = "block"
+}).catch(()=>{
+  guideContainer.style.display = "none"
+  loginGuide.style.display= "block"
+  loginButton.style.display= "block"
 })
 loginButton.onclick = ()=>{
   window.open("https://www.flappypedia.com")
