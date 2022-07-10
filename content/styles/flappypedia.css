@@ -14,6 +14,7 @@
     flex-direction: row !important;
     justify-content: space-between !important;
     align-items: center !important;
+    min-width: 320px !important;
 }
 
 .title-container {
@@ -111,4 +112,13 @@
 .el-image {
     width: 20px !important;
     height: 20px !important;
+}
+
+.el-input {
+    border: none;
+    width: 100%;
+    outline: none;
+    background: transparent;
+    cursor: pointer;
+    color: #989898 !important;
 }

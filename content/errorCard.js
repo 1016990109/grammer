@@ -52,16 +52,8 @@ class ErrorCard {
     this._container.setAttribute("data-lt-adjust-appearance", "true")
     this._container.classList.add("lt-error-card")
     this._container.classList.add("flappy")
-    this._container.addEventListener("click", (e => e.stopPropagation()))
+    // this._container.addEventListener("click", (e => e.stopPropagation()))
     hasDarkBackground(this._inputArea) ? this._container.setAttribute("data-lt-force-appearance", "dark") : this._container.setAttribute("data-lt-force-appearance", "light")
-    this._eventListeners.push(
-      addUseCaptureEvent(this._keyboardEventTarget, "keydown", this._onKeyDown.bind(this)),
-      addUseCaptureEvent(this._container, "mousedown", (e => {
-        e.stopImmediatePropagation(), e.target && !e.target.closest(".lt-errorcard__text, .lt-card__headline") && e.preventDefault()
-      })),
-      addUseCaptureEvent(this._container, "mouseup", (e => e.stopImmediatePropagation())),
-      addUseCaptureEvent(this._container, "pointerdown", (e => e.stopImmediatePropagation())),
-      addUseCaptureEvent(this._container, "pointerup", (e => e.stopImmediatePropagation())))
     const t = this._document.createElement("lt-div");
     t.classList.add("lt-card__container")
     t.id = 'plappy-card'
@@ -105,33 +97,7 @@ class ErrorCard {
     }
   }
 
-  _renderContent(e) {
-    // render flappypedia 的卡片
-    const wikiInfo = (JSON.parse(this._error.description || '{}')).info
-    const wikiHeader = this._document.createElement('div')
-    wikiHeader.classList.add('wiki-header')
-    wikiHeader.id = 'wiki-header'
-    const titleContainer = this._document.createElement('div')
-    titleContainer.classList.add('title-container')
-    const wikiTitle = this._document.createElement('div')
-    wikiTitle.classList.add('wiki-title')
-    wikiTitle.id = 'wiki-title'
-    wikiTitle.innerHTML = wikiInfo.name
-    titleContainer.appendChild(wikiTitle)
-    const wikiSubTitle = this._document.createElement('div')
-    wikiSubTitle.classList.add('wiki-sub-title')
-    wikiSubTitle.id = 'wiki-sub-title'
-    wikiSubTitle.innerHTML = wikiInfo.fullName
-    titleContainer.appendChild(wikiSubTitle)
-    wikiHeader.appendChild(titleContainer)
-    const flappyLink = this._document.createElement('a')
-    flappyLink.classList.add('wiki-airplane')
-    flappyLink.id = 'wiki-airplane'
-    flappyLink.href = "https://hamilhong.work/console"
-    flappyLink.target = "_blank"
-    wikiHeader.appendChild(flappyLink)
-    e.appendChild(wikiHeader)
-
+  _getWikiContent(wikiInfo) {
     const content = this._document.createElement('lt-div')
     content.classList.add('wiki-container')
     content.id = 'wiki-container'
@@ -210,7 +176,62 @@ class ErrorCard {
       }
     }
 
-    e.appendChild(content)
+    return content
+  }
+
+  _renderContent(e) {
+    // render flappypedia 的卡片
+    const wikiInfoList = (JSON.parse(this._error.description || '{}')).infoList
+    if (wikiInfoList.length === 0) {
+      return
+    }
+    const wikiInfo = wikiInfoList[0]
+    const wikiHeader = this._document.createElement('div')
+    wikiHeader.classList.add('wiki-header')
+    wikiHeader.id = 'wiki-header'
+    const titleContainer = this._document.createElement('div')
+    titleContainer.classList.add('title-container')
+    const wikiTitle = this._document.createElement('div')
+    wikiTitle.classList.add('wiki-title')
+    wikiTitle.id = 'wiki-title'
+    wikiTitle.innerHTML = wikiInfo.name
+    titleContainer.appendChild(wikiTitle)
+    const wikiSubTitle = this._document.createElement('div')
+    wikiSubTitle.classList.add('wiki-sub-title')
+    wikiSubTitle.id = 'wiki-sub-title'
+    wikiSubTitle.innerHTML = wikiInfo.fullName
+    titleContainer.appendChild(wikiSubTitle)
+    wikiHeader.appendChild(titleContainer)
+
+    // right header content
+    const rightHeaderContainer = this._document.createElement('div');
+    const flappyLink = this._document.createElement('a')
+    flappyLink.classList.add('wiki-airplane')
+    flappyLink.id = 'wiki-airplane'
+    flappyLink.href = "https://flappypedia.com/console"
+    flappyLink.target = "_blank"
+    rightHeaderContainer.appendChild(flappyLink)
+    const spaceSelect = this._document.createElement('select')
+    spaceSelect.setAttribute('name', 'space')
+    spaceSelect.classList.add('el-input')
+    for (let i = 0; i < wikiInfoList.length; i++) {
+      const spaceInfo = wikiInfoList[i].space
+      const spaceOption = this._document.createElement('option')
+      spaceOption.value = spaceInfo.id
+      spaceOption.innerHTML = spaceInfo.name
+      spaceOption.classList.add('el-option')
+      spaceSelect.appendChild(spaceOption)
+    }
+    rightHeaderContainer.appendChild(spaceSelect)
+    wikiHeader.appendChild(rightHeaderContainer)
+    e.appendChild(wikiHeader)
+    let childContent = this._getWikiContent(wikiInfo)
+    e.appendChild(childContent)
+    spaceSelect.onchange = (event) => {
+      e.removeChild(childContent)
+      childContent = this._getWikiContent(wikiInfoList.find(v => String(v.space.id) === String(event.target.value)))
+      e.appendChild(childContent)
+    }
   }
 
   _renderFixes(e) {

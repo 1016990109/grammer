@@ -1,6 +1,6 @@
 
-const FLAPPY_AUTH_URL = "https://hamilhong.work/auth/google"
-const FLAPPY_HOST = "https://hamilhong.work/"
+const FLAPPY_AUTH_URL = "https://flappypedia.com/auth/google"
+const FLAPPY_HOST = "https://flappypedia.com/"
 const FLAPPY_TOKEN_NAME = "connect.sid"
 
 class FlappyAuth {
