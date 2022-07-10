@@ -83,7 +83,7 @@
     font-weight: 400 !important;
     font-size: 12px !important;
     line-height: 20px !important;
-    color: #3384FC !important;
+    color: #7B61FF !important;
 }
 
 .relate-title, #relate-title {
@@ -92,4 +92,23 @@
     font-size: 12px !important;
     line-height: 20px !important;
     margin: 10px 0 !important;
+}
+
+.flappy-link {
+    transition: all 0.3s ease-in-out;
+    color: #7B61FF;
+}
+
+.flappy-link:hover {
+    background: rgba(142, 128, 255, 0.2);
+}
+
+.link-container {
+    display: flex;
+    align-items: center;
+}
+
+.el-image {
+    width: 20px !important;
+    height: 20px !important;
 }

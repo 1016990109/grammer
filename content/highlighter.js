@@ -57,11 +57,10 @@ class Highlighter {
       if (!isInCard) {
         return void (dispatchCustomEvent(document, Highlighter.eventNames.blockCanceled, h) && s && t.preventDefault())
       } else {
-        console.log('in card!!!!')
         t.preventDefault()
       }
     }
-    this._handleClickDebounce = debounce(this._handleClick.bind(this), 1000, {
+    this._handleClickDebounce = debounce(this._handleClick.bind(this), 300, {
       trailing: true
     })
     this._inputArea = t
@@ -397,6 +396,7 @@ class Highlighter {
           }
         }
       }
+      const step = 2;// 每次画的像素点
       for (const e of r) {
         if (e.height > 2) {
           // 背景色加动画

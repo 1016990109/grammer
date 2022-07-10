@@ -95,6 +95,16 @@ class ErrorCard {
     d /= _.x * h, c /= _.y * h, t.style.left = Math.round(d) + "px", t.style.top = Math.round(c) + "px"
   }
 
+  getFavicon(link) {
+    try {
+      const url = new URL(link);
+      return `${url.protocol}//${url.hostname}/favicon.ico`;
+    } catch (e) {
+      console.error(e)
+      return link
+    }
+  }
+
   _renderContent(e) {
     // render flappypedia 的卡片
     const wikiInfo = (JSON.parse(this._error.description || '{}')).info
@@ -160,11 +170,20 @@ class ErrorCard {
       for (let i = 0; i < wikiInfo.links.length; i++) {
         try {
           const link = JSON.parse(wikiInfo.links[i])
+          // link container
+          const linkContainer = this._document.createElement('div')
+          linkContainer.classList.add('link-container')
+          const linkImg = this._document.createElement('img')
+          linkImg.classList.add('el-image')
+          linkImg.src = this.getFavicon(link.link)
+          linkContainer.appendChild(linkImg)
           const linkTitle = this._document.createElement('a')
+          linkTitle.classList.add('flappy-link')
           linkTitle.href = link.link
           linkTitle.target = '_blank'
           linkTitle.innerHTML = link.title
-          content.appendChild(linkTitle)
+          linkContainer.appendChild(linkTitle)
+          content.appendChild(linkContainer)
         } catch (e) {
           console.error(e)
         }
