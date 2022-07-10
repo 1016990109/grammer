@@ -87,11 +87,11 @@ class BackgroundApp {
       if (BrowserDetector.isSafari()) return;
       this._browserAction.setIcon({
         path: {
-          16: "/assets/images/icons/icon16.png",
-          32: "/assets/images/icons/icon32.png",
-          48: "/assets/images/icons/icon48.png",
-          64: "/assets/images/icons/icon64.png",
-          128: "/assets/images/icons/icon128.png"
+          16: "/assets/images/flappy_logo.png",
+          32: "/assets/images/flappy_logo.png",
+          48: "/assets/images/flappy_logo.png",
+          64: "/assets/images/flappy_logo.png",
+          128: "/assets/images/flappy_logo.png"
         }
       })
     }))
