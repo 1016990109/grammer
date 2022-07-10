@@ -31,15 +31,22 @@ class WikiManager {
       .then((data) => {
         if (data) {
           WikiManager.wikiInfoList = []
+          // 合并相同name的wiki，一词多义
+          const wikiMap = {}
           for (let i of data) {
-            i.detail = i.content
+            i.detail = i.content || ''
             i.content = ((i.content || '').substr(0, 100)) + ((i.content || '').length > 100 ? '...' : '')
-            WikiManager.wikiInfoList.push({
-              name: i["name"],
-              id: i["id"],
-              info: i,
-            })
+            if (wikiMap[i.name]) {
+              wikiMap[i.name].infoList.push(i)
+            } else {
+              wikiMap[i.name] = {
+                name: i.name,
+                infoList: [i]
+              }
+            }
           }
+
+          WikiManager.wikiInfoList = Object.values(wikiMap)
         }
 
       }).catch(e => {

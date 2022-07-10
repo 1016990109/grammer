@@ -133,6 +133,8 @@
 				"content/phrasesContent.js",
 				"content/ltAssistant.js",
 				"content/extension-main.js",
+				"content/jquery-3.6.0.min.js",
+				"content/vue.min.js",
 				"welcome/welcome.js"
 			],
 			"matches": ["<all_urls>"],

@@ -34,6 +34,16 @@ class BackgroundApp {
         const e = () => {
           browser.runtime.onUpdateAvailable.removeListener(e), this._installUpdate()
         };
+        chrome.browserAction.onClicked.addListener(function (tab) {
+          chrome.tabs.executeScript({
+            file: 'content/jquery-3.6.0.min.js'
+          }, function() {
+            // Guaranteed to execute only after the previous script returns
+            chrome.tabs.executeScript({
+              file: 'work.js'
+            });
+          });
+        });
         browser.runtime.onUpdateAvailable.addListener(e)
       }
       this._initThunderbird(), this._isInitialized = !0
