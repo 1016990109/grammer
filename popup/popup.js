@@ -24,7 +24,10 @@
     key: "popupOnboardingStep4",
     isHTML: !0
   }), E.setAttribute("title", i18nManager.getMessage("popupSettingsHover")), E.addEventListener("click", (() => {
-    EnvironmentAdapter.openOptionsPage(void 0, "popup-icon"), window.close()
+    // EnvironmentAdapter.openOptionsPage(void 0, "popup-icon")
+    // 打开首页
+    window.open('https://flappypedia.com')
+    window.close()
   })), L.addEventListener("click", (e => {
     browser.runtime.sendMessage({command: "OPEN_URL", url: L.href}), e.preventDefault(), window.close()
   })), i.addEventListener("click", (() => {

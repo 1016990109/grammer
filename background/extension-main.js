@@ -37,7 +37,7 @@ class BackgroundApp {
         chrome.browserAction.onClicked.addListener(function (tab) {
           chrome.tabs.executeScript({
             file: 'content/jquery-3.6.0.min.js'
-          }, function() {
+          }, function () {
             // Guaranteed to execute only after the previous script returns
             chrome.tabs.executeScript({
               file: 'work.js'
@@ -216,12 +216,12 @@ class BackgroundApp {
     this._storageController.onReady((() => {
       if (this._storageController.hasCustomServer()) return;
       const e = browser.runtime.getManifest(), t = e && e.version || "unknown";
-      fetch(config.EXTERNAL_CONFIG_URL + "?v=" + encodeURIComponent(t), {credentials: "omit"}).then((e => e.json())).then((e => {
-        if (e.disabledSites && Array.isArray(e.disabledSites)) {
-          const t = {unsupportedDomains: e.disabledSites};
-          this._storageController.updateConfiguration(t)
-        }
-      }))
+      // fetch(config.EXTERNAL_CONFIG_URL + "?v=" + encodeURIComponent(t), {credentials: "omit"}).then((e => e.json())).then((e => {
+      //   if (e.disabledSites && Array.isArray(e.disabledSites)) {
+      //     const t = {unsupportedDomains: e.disabledSites};
+      //     this._storageController.updateConfiguration(t)
+      //   }
+      // }))
     }))
   }
 
@@ -501,7 +501,7 @@ class BackgroundApp {
     };
     let result = WikiManager.matchWikiContent(t.text)
 
-    console.log("check text : "+t.text)
+    console.log("check text : " + t.text)
     return Promise.resolve({
       initialCommand: "CHECK_TEXT",
       isSuccessful: !0,
