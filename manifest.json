@@ -22,7 +22,9 @@
 	"storage": {
 		"managed_schema": "managed_settings.json"
 	},
-
+	"externally_connectable": {
+		"matches": ["*://localhost/*", "*://flappypedia.com/*"]
+	},
 	"background": {
 		"scripts": [
 			"common/browser-polyfill.min.js",

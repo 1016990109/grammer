@@ -46,7 +46,21 @@ class BackgroundApp {
         });
         browser.runtime.onUpdateAvailable.addListener(e)
       }
-      this._initThunderbird(), this._isInitialized = !0
+      this._initThunderbird()
+      this._isInitialized = !0
+      chrome.runtime.onMessageExternal.addListener(
+        (message, sender, sendResponse) => {
+          if (message == 'version') {
+            sendResponse({
+              type: 'success',
+              version: '0.1.0'
+            });
+            return true;
+          }
+          console.log(message, sender, sendResponse)
+          return true;
+        }
+      );
     }
   }
 

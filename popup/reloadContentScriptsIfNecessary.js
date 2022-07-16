@@ -22,7 +22,8 @@ function reloadContentScriptsIfNecessary(e, t) {
         }))
       })), Tracker.trackEvent("Action", "inject_scripts", t)
     }
-  }))), browser.tabs.executeScript(e, {
+  })))
+  browser.tabs.executeScript(e, {
     code: '\n\t\t\t\tif (typeof(LTAssistant) === "undefined" && navigator.userAgent.match(/Chrome\\/|Chromium\\//) && !location.pathname.includes(\'_generated_background_page\')) {\n\t\t\t\t\twindow.__ltLastActiveElement = document.activeElement;\n\t\t\t\t\tchrome.runtime.sendMessage({ command: "INJECT_SCRIPTS" }, () => null);\n\t\t\t\t}\n\t\t\t',
     matchAboutBlank: !0,
     allFrames: !0

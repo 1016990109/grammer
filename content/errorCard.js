@@ -222,7 +222,7 @@ class ErrorCard {
       spaceOption.classList.add('el-option')
       spaceSelect.appendChild(spaceOption)
     }
-    rightHeaderContainer.appendChild(spaceSelect)
+    // rightHeaderContainer.appendChild(spaceSelect)
     wikiHeader.appendChild(rightHeaderContainer)
     e.appendChild(wikiHeader)
     let childContent = this._getWikiContent(wikiInfo)
