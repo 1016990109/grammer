@@ -27,7 +27,7 @@
   },
   "appDescThunderbird": {
     "description": "The description of the application, displayed in the Thunderbird web store.",
-    "message": "Flappypedia is an app that empower your team by promoting the information sharing. Flappypedia lets knowledge come into view wherever someone needs it."
+    "message": "Check your e-mails for spelling and grammar issues"
   },
   "appName": {
     "description": "The name of the application, displayed in the web store.",
@@ -35,11 +35,11 @@
   },
   "appStoreDesc1": {
     "description": "Description item 1 in Google Chrome Web Store (does not appear in the extension itself)",
-    "message": "Flappypedia is an app that empower your team by promoting the information sharing. Flappypedia lets knowledge come into view wherever someone needs it."
+    "message": "Finds many errors that a simple spell checker cannot detect"
   },
   "appStoreDesc10": {
     "description": "Description paragraph 1 in Google Chrome Web Store (does not appear in the extension itself)",
-    "message": "Flappypedia is an app that empower your team by promoting the information sharing. Flappypedia lets knowledge come into view wherever someone needs it."
+    "message": "With this extension you can check text with the free style and grammar checker Plappypedia. Plappypedia finds many errors that a simple spell checker cannot detect, like mixing up there/their, a/an, or repeating a word, and it can detect some grammar problems. It supports more than 25 languages, including English, Spanish, French, German, Polish, and Russian."
   },
   "appStoreDesc2": {
     "description": "Description item 2 in Google Chrome Web Store (does not appear in the extension itself)",
