@@ -199,8 +199,9 @@ class LTAssistant {
       const i = e.detail.selection, o = getWordContext(r.inputAreaWrapper.getText(), i.start, i.end || i.start);
       o && this._showRephraseCard(r, e.detail.clickedRectangles, o)
     }, this._onInputTextChanged = e => {
-      this._hideAllErrorCards(), requestAnimationFrame((() => this._hideAllRephraseCards()));
-      const t = this._editors.find((t => t.inputAreaWrapper === e.detail.inputAreaWrapper));
+      this._hideAllErrorCards()
+      requestAnimationFrame((() => this._hideAllRephraseCards()));
+      const t = this._editors.find((t => t && e.detail && t.inputAreaWrapper === e.detail.inputAreaWrapper));
       if (t) {
         if (this._startTypingMode(t), t.dialog && t.dialog.setInsignificantChangeMode(!this._isSignificantTextChange(e.detail.previousText, e.detail.text)), this._checkEditor(t, e.detail.text, !0)) this._endTypingMode(t), this._updateDisplayedErrors(t); else {
           const r = e.detail.text, i = t.inputAreaTweaks.getReplacedParts(r), o = getValuableText(r, i),

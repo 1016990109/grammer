@@ -219,8 +219,9 @@ class GoogleSlides {
       this._checkMode(), this._checkForNewSlides(), this._checkOutOfViewSlides()
     }), 750), this._storageController.addEventListener(StorageControllerClass.eventNames.settingsChanged, (t => {
       (t.disabledEditorGroups || t.disabledDomains) && this._toggleMenuBarButton(!!t.disabledEditorGroups)
-    })), this._storageController.onReady((() => {
-      this._addMenuBarButton()
+    }))
+    this._storageController.onReady((() => {
+      // this._addMenuBarButton()
     }))
   }
 
