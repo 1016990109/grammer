@@ -23,11 +23,11 @@
   },
   "appDesc": {
     "description": "The description of the application, displayed in the web store.",
-    "message": "Flappypedia is an app that empower your team by promoting the information sharing. Flappypedia lets knowledge come into view wherever someone needs it."
+    "message": "Flappypedia is an app that empower your team by promoting the information sharing."
   },
   "appDescThunderbird": {
     "description": "The description of the application, displayed in the Thunderbird web store.",
-    "message": "Check your e-mails for spelling and grammar issues"
+    "message": ""
   },
   "appName": {
     "description": "The name of the application, displayed in the web store.",
