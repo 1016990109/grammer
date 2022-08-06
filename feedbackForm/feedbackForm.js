@@ -1,4 +1,4 @@
-/*! (C) Copyright 2020 Plappypediaer GmbH. All rights reserved. */
+/*! (C) Copyright 2020 Flappypediaer GmbH. All rights reserved. */
 {
   Tracker.trackPageView();
   const e = StorageController.create(), n = new URL(location.href), t = document.getElementById("feedback-form"),
@@ -9,7 +9,7 @@
   translateSection(document.documentElement), n.searchParams.get("title") && (a.textContent = n.searchParams.get("title")), "1" === n.searchParams.get("screenshot") && (c.style.display = "block", i.checked = !0, o.style.display = "none");
   const l = n.searchParams.get("html"), d = n.searchParams.get("url") || "", u = getDomain(d),
     m = EnvironmentAdapter.getVersion(),
-    $ = `Feedback Plappypedia on ${u} (v${m}, lang: ${navigator.language}, browser: ${BrowserDetector.getBrowserName()})`,
+    $ = `Feedback Flappypedia on ${u} (v${m}, lang: ${navigator.language}, browser: ${BrowserDetector.getBrowserName()})`,
     y = `<a href="mailto:feedback@flappypedia.org?subject=${encodeURIComponent($)}">feedback@flappypedia.org</a>`;
   o.innerHTML = i18nManager.getMessage("feedbackDirectMail", [y]), e.onReady((() => {
     const {username: n} = e.getSettings();

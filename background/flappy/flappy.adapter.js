@@ -31,7 +31,7 @@ class FlappyAdapter {
                 "name": "English (US)"
             },
             "description": JSON.stringify(searchItem.wikiItem),
-            "shortDescription": "PlappyPedia",
+            "shortDescription": "Flappypedia",
             "start": searchItem.startIndex,
             "end": searchItem.endIndex,
             "length": length,

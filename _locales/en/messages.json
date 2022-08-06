@@ -9,7 +9,7 @@
   },
   "addonsSiteNotSupported": {
     "description": "Error shown when Firefox add-on is used on https://addons.mozilla.org, which doesn't work for technical reasons",
-    "message": "Sorry, Plappypedia doesn't work on the website of Firefox Add-ons (addons.mozilla.org). It works anywhere else you write (e.g. Facebook, Gmail, Twitter, LinkedIn)."
+    "message": "Sorry, Flappypedia doesn't work on the website of Firefox Add-ons (addons.mozilla.org). It works anywhere else you write (e.g. Facebook, Gmail, Twitter, LinkedIn)."
   },
   "addToDictionaryCaption": {
     "description": "Title hover shown in the popup to accept a word to the internal dictionary",
@@ -31,7 +31,7 @@
   },
   "appName": {
     "description": "The name of the application, displayed in the web store.",
-    "message": "Enterprise-Wiki — Plappypedia"
+    "message": "Enterprise-Wiki — Flappypedia"
   },
   "appStoreDesc1": {
     "description": "Description item 1 in Google Chrome Web Store (does not appear in the extension itself)",
@@ -39,7 +39,7 @@
   },
   "appStoreDesc10": {
     "description": "Description paragraph 1 in Google Chrome Web Store (does not appear in the extension itself)",
-    "message": "With this extension you can check text with the free style and grammar checker Plappypedia. Plappypedia finds many errors that a simple spell checker cannot detect, like mixing up there/their, a/an, or repeating a word, and it can detect some grammar problems. It supports more than 25 languages, including English, Spanish, French, German, Polish, and Russian."
+    "message": "With this extension you can check text with the free style and grammar checker Flappypedia. Flappypedia finds many errors that a simple spell checker cannot detect, like mixing up there/their, a/an, or repeating a word, and it can detect some grammar problems. It supports more than 25 languages, including English, Spanish, French, German, Polish, and Russian."
   },
   "appStoreDesc2": {
     "description": "Description item 2 in Google Chrome Web Store (does not appear in the extension itself)",
@@ -47,7 +47,7 @@
   },
   "appStoreDesc20": {
     "description": "Description paragraph 2 in Google Chrome Web Store (does not appear in the extension itself)",
-    "message": "Plappypedia is designed with simplicity in mind. It instantly checks the spelling and grammar of any text in the current text field. Plappypedia is compatible with almost all text, regardless of source, including social networks such as Twitter or LinkedIn and online e-mail services, such as Gmail."
+    "message": "Flappypedia is designed with simplicity in mind. It instantly checks the spelling and grammar of any text in the current text field. Flappypedia is compatible with almost all text, regardless of source, including social networks such as Twitter or LinkedIn and online e-mail services, such as Gmail."
   },
   "appStoreDesc3": {
     "description": "Description item 3 in Google Chrome Web Store (does not appear in the extension itself)",
@@ -55,7 +55,7 @@
   },
   "appStoreDesc30": {
     "description": "Description paragraph 3 in Google Chrome Web Store (does not appear in the extension itself)",
-    "message": "With Plappypedia, we aim to give users a fully-featured grammar checker and proofreader that will enable them to have control and confidence over their content. While Plappypedia is a vital extension for non-native speakers, it’s also smart enough to recognize many mistakes that native speakers commonly make. This grammar and spelling correction works across all variations of common language; distinguishing between U.S. and British English, for instance. Plappypedia also features a personal dictionary for exceptions or words that you might commonly use but that are not found in a conventional dictionary. Plappypedia will recognize these words in future grammar checking and proofreading."
+    "message": "With Flappypedia, we aim to give users a fully-featured grammar checker and proofreader that will enable them to have control and confidence over their content. While Flappypedia is a vital extension for non-native speakers, it’s also smart enough to recognize many mistakes that native speakers commonly make. This grammar and spelling correction works across all variations of common language; distinguishing between U.S. and British English, for instance. Flappypedia also features a personal dictionary for exceptions or words that you might commonly use but that are not found in a conventional dictionary. Flappypedia will recognize these words in future grammar checking and proofreading."
   },
   "appStoreDesc4": {
     "description": "Description item 4 in Google Chrome Web Store (does not appear in the extension itself)",
@@ -63,15 +63,15 @@
   },
   "appStoreDesc60": {
     "description": "Description paragraph 5 in Google Chrome Web Store (does not appear in the extension itself)",
-    "message": "Unlike Grammarly (a.k.a. Grammerly :-) and Ginger, Plappypedia works for many languages."
+    "message": "Unlike Grammarly (a.k.a. Grammerly :-) and Ginger, Flappypedia works for many languages."
   },
   "appStoreDesc70": {
     "description": "Description paragraph 6a in Google Chrome Web Store (does not appear in the extension itself)",
-    "message": "Your privacy is important to us: By default, this extension will check your text by sending it to https://Plappypedia.org over a securely encrypted connection. No account is needed to use this extension. We don't store your IP address. See https://Plappypedia.org/privacy/ for our privacy policy."
+    "message": "Your privacy is important to us: By default, this extension will check your text by sending it to https://Flappypedia.org over a securely encrypted connection. No account is needed to use this extension. We don't store your IP address. See https://Flappypedia.org/privacy/ for our privacy policy."
   },
   "appStoreDesc71": {
     "description": "Description paragraph 6b in Google Chrome Web Store (does not appear in the extension itself)",
-    "message": "Please send bug reports or questions to https://forum.Plappypedia.org"
+    "message": "Please send bug reports or questions to https://forum.Flappypedia.org"
   },
   "appStoreDesc80": {
     "description": "Description paragraph 7 in Google Chrome Web Store (does not appear in the extension itself)",
@@ -145,15 +145,15 @@
   },
   "changelog2020FeatureSectionAppDescription": {
     "description": "Headline for the section that explains the desktop App in depth",
-    "message": "With the Plappypedia desktop app for Mac, you have access to all your texts at any time. Use the system-wide keyboard shortcut and check texts from the clipboard or common word processors without losing important formatting."
+    "message": "With the Flappypedia desktop app for Mac, you have access to all your texts at any time. Use the system-wide keyboard shortcut and check texts from the clipboard or common word processors without losing important formatting."
   },
   "changelog2020FeatureSectionAppHeadline": {
     "description": "Text for the section that explains the desktop App in depth (up to 200 characters)",
-    "message": "Hello Plappypedia for Mac"
+    "message": "Hello Flappypedia for Mac"
   },
   "changelog2020FeatureSectionEditorDescription": {
     "description": "Text for the section that explains the editor in depth (up to 200 characters)",
-    "message": "The Plappypedia Editor is here to give you a distraction-free writing experience. Moreover, our so-called \"picky mode\" will provide many additional suggestions to perfect your text."
+    "message": "The Flappypedia Editor is here to give you a distraction-free writing experience. Moreover, our so-called \"picky mode\" will provide many additional suggestions to perfect your text."
   },
   "changelog2020FeatureSectionEditorHeadline": {
     "description": "Headline for the section that explains the editor in depth",
@@ -161,7 +161,7 @@
   },
   "changelog2020FeatureSectionOverleafDescription": {
     "description": "Headline for the section that explains the Overleaf integration in depth",
-    "message": "Use Plappypedia for your scientific work. With the Overleaf integration of the browser add-on, you can give your texts the final touch."
+    "message": "Use Flappypedia for your scientific work. With the Overleaf integration of the browser add-on, you can give your texts the final touch."
   },
   "changelog2020FeatureSectionOverleafHeadline": {
     "description": "Text for the section that explains the Overleaf integration in depth (up to 200 characters)",
@@ -169,15 +169,15 @@
   },
   "changelog2020FeatureSectionServicesDescription": {
     "description": "Text for the section that explains that LT now supports more services than ever (up to 200 characters)",
-    "message": "Plappypedia now supports more services than ever before. No matter where you like to write — we’ve got you covered."
+    "message": "Flappypedia now supports more services than ever before. No matter where you like to write — we’ve got you covered."
   },
   "changelog2020FeatureSectionServicesHeadline": {
     "description": "Headline for the section that explains that LT now supports more services than ever",
-    "message": "Plappypedia — at your Service"
+    "message": "Flappypedia — at your Service"
   },
   "changelog2020FeatureSectionSlidesDescription": {
     "description": "Headline for the section that explains the Google Slides integration in depth",
-    "message": "Plappypedia now works with Google Slides. Impress your stakeholders and colleagues with impeccable grammar and compelling language."
+    "message": "Flappypedia now works with Google Slides. Impress your stakeholders and colleagues with impeccable grammar and compelling language."
   },
   "changelog2020FeatureSectionSlidesHeadline": {
     "description": "Text for the section that explains the Google Slides integration in depth (up to 200 characters)",
@@ -185,7 +185,7 @@
   },
   "changelog2020FeatureSectionSpanishPremiumDescription": {
     "description": "Text for the section that explains the Spanish Premium version is here in depth (up to 200 characters)",
-    "message": "With Plappypedia Premium for Spanish, you upgrade your writing to the next level. Find advanced issues and get style suggestions to enhance your writing."
+    "message": "With Flappypedia Premium for Spanish, you upgrade your writing to the next level. Find advanced issues and get style suggestions to enhance your writing."
   },
   "changelog2020FeatureSectionSpanishPremiumHeadline": {
     "description": "Headline for the section that explains the Spanish Premium version is here in depth",
@@ -193,7 +193,7 @@
   },
   "changelog2020FeatureSectionStyleDescription": {
     "description": "Text for the section that explains the LT style checking in depth (up to 200 characters)",
-    "message": "Plappypedia finds many style issues in your texts, so you sound more professional when writing to your peers."
+    "message": "Flappypedia finds many style issues in your texts, so you sound more professional when writing to your peers."
   },
   "changelog2020FeatureSectionStyleHeadline": {
     "description": "Headline for the section that explains the LT style checking in depth",
@@ -201,7 +201,7 @@
   },
   "changelog2020FeatureSectionTeamsDescription": {
     "description": "Text for the section that explains the Team Feature is here in depth (up to 200 characters)",
-    "message": "Manage your team of writers to develop a common style. Plappypedia Premium is now available for businesses & organizations."
+    "message": "Manage your team of writers to develop a common style. Flappypedia Premium is now available for businesses & organizations."
   },
   "changelog2020FeatureSectionTeamsHeadline": {
     "description": "Headline for the section that explains the Team Feature is here in depth",
@@ -209,7 +209,7 @@
   },
   "changelog2020FeatureSectionTranslateDescription": {
     "description": "Text for the section that explains the LT inline translation feature in depth (works for DE/EN only; up to 200 characters)",
-    "message": "You know that feeling when an English word is on the tip of your tongue? Now, Plappypedia helps you translate words from German to English. Simply type a German word in an English sentence."
+    "message": "You know that feeling when an English word is on the tip of your tongue? Now, Flappypedia helps you translate words from German to English. Simply type a German word in an English sentence."
   },
   "changelog2020FeatureSectionTranslateHeadline": {
     "description": "Headline for the section that explains the LT translation feature in depth",
@@ -217,7 +217,7 @@
   },
   "changelog2020FeatureTeaserAppDescription": {
     "description": "Text for the teaser that explains the LT App desktop app (up to 100 characters)",
-    "message": "The Plappypedia Editor is coming to the Mac. Write and store your texts in a distraction-free environment."
+    "message": "The Flappypedia Editor is coming to the Mac. Write and store your texts in a distraction-free environment."
   },
   "changelog2020FeatureTeaserAppHeadline": {
     "description": "Headline for the teaser that explains the LT App desktop app",
@@ -237,7 +237,7 @@
   },
   "changelog2020FeatureTeaserOverleafDescription": {
     "description": "Text for the teaser that explains the Overleaf integration (up to 100 characters)",
-    "message": "The Plappypedia browser extension now checks your Overleaf documents."
+    "message": "The Flappypedia browser extension now checks your Overleaf documents."
   },
   "changelog2020FeatureTeaserOverleafHeadline": {
     "description": "Headline for the teaser that explains the Overleaf integration",
@@ -245,7 +245,7 @@
   },
   "changelog2020FeatureTeaserSlidesDescription": {
     "description": "Text for the teaser that explains the Google Slides integration (up to 100 characters)",
-    "message": "The Plappypedia browser extension now also checks your Google Slides presentations."
+    "message": "The Flappypedia browser extension now also checks your Google Slides presentations."
   },
   "changelog2020FeatureTeaserSlidesHeadline": {
     "description": "Headline for the teaser that explains the Google Slides integration",
@@ -261,7 +261,7 @@
   },
   "changelog2020FeatureTeaserStyleDescription": {
     "description": "Text for the teaser that explains the LT style checking (up to 100 characters)",
-    "message": "Plappypedia helps you adopt a better writing style."
+    "message": "Flappypedia helps you adopt a better writing style."
   },
   "changelog2020FeatureTeaserStyleHeadline": {
     "description": "Headline for the teaser that explains the LT style checking",
@@ -269,7 +269,7 @@
   },
   "changelog2020FeatureTeaserTeamsDescription": {
     "description": "Text for the teaser that explains the Team Feature is here (up to 100 characters)",
-    "message": "From small groups to large organizations: Plappypedia now offers advanced functionalities for teams and businesses."
+    "message": "From small groups to large organizations: Flappypedia now offers advanced functionalities for teams and businesses."
   },
   "changelog2020FeatureTeaserTeamsHeadline": {
     "description": "Headline for the teaser that explains the Team Feature is here",
@@ -302,12 +302,12 @@
     "message": "We have been busy improving our popular grammar & style checker to offer you the best possible experience. Today, we are proud to share these new features with you:"
   },
   "changelog2020LtInfoText": {
-    "description": "Little notification on top of the page that should raise awareness that it's a Plappypedia offer",
-    "message": "Hey there! News from Plappypedia! "
+    "description": "Little notification on top of the page that should raise awareness that it's a Flappypedia offer",
+    "message": "Hey there! News from Flappypedia! "
   },
   "changelog2020MainHeadline": {
     "description": "Headline for a section where all new features are explained",
-    "message": "The new Plappypedia is here"
+    "message": "The new Flappypedia is here"
   },
   "changelog2020SignUpLink": {
     "description": "Link that sends the user to the sign up form",
@@ -343,7 +343,7 @@
   },
   "changelog2021FeatureSectionDesktopDescription": {
     "description": "Headline for the section that explains the desktop app in depth",
-    "message": "Use the system-level shortcut to check texts from every application. With Plappypedia for Windows & Mac, you get the power of the Editor combined with a deeper system integration."
+    "message": "Use the system-level shortcut to check texts from every application. With Flappypedia for Windows & Mac, you get the power of the Editor combined with a deeper system integration."
   },
   "changelog2021FeatureSectionDesktopHeadline": {
     "description": "Headline for the section that explains the desktop app in depth",
@@ -351,7 +351,7 @@
   },
   "changelog2021FeatureSectionFrenchDescription": {
     "description": "Headline for the section that explains the advances in the French version in depth",
-    "message": "Over the past months, we've been doubling down on French. Plappypedia now finds more errors and provides additional suggestions to perfect your texts. "
+    "message": "Over the past months, we've been doubling down on French. Flappypedia now finds more errors and provides additional suggestions to perfect your texts. "
   },
   "changelog2021FeatureSectionFrenchHeadline": {
     "description": "Headline for the section that explains the advances in the French version in depth",
@@ -359,7 +359,7 @@
   },
   "changelog2021FeatureSectionStyleDescription": {
     "description": "Headline for the section that explains the advances in style in depth",
-    "message": "We've been working hard to help you make your texts even better. Plappypedia Premium now offers more style suggestions than ever before to make your texts stand out."
+    "message": "We've been working hard to help you make your texts even better. Flappypedia Premium now offers more style suggestions than ever before to make your texts stand out."
   },
   "changelog2021FeatureSectionStyleHeadline": {
     "description": "Headline for the section that explains the advances in style in depth",
@@ -367,7 +367,7 @@
   },
   "changelog2021FeatureSectionThunderbirdDescription": {
     "description": "Headline for the section that explains the thunderbird integration in depth",
-    "message": "Plappypedia is now available for Thunderbird. Use the advanced grammar, style, and spelling correction of Plappypedia in your favorite mail client."
+    "message": "Flappypedia is now available for Thunderbird. Use the advanced grammar, style, and spelling correction of Flappypedia in your favorite mail client."
   },
   "changelog2021FeatureSectionThunderbirdHeadline": {
     "description": "Headline for the section that explains the thunderbird integration in depth",
@@ -379,7 +379,7 @@
   },
   "changelog2021FeatureSectionWordDescription": {
     "description": "Headline for the section that explains the word upload in depth",
-    "message": "No matter whether you use Windows, macOS or the web editor, simply import your Word document and take advantage of Plappypedia's advanced grammar, style and spell correction. Export your document afterwards without losing any formatting."
+    "message": "No matter whether you use Windows, macOS or the web editor, simply import your Word document and take advantage of Flappypedia's advanced grammar, style and spell correction. Export your document afterwards without losing any formatting."
   },
   "changelog2021FeatureSectionWordHeadline": {
     "description": "**Headline for the section that explains the word upload in depth. This is a play on words regrading word-files, If that's not possible in your language. Please use a literal translation of error-free word files**",
@@ -387,7 +387,7 @@
   },
   "changelog2021FeatureTeaserDesktopDescription": {
     "description": "**Text for the teaser that explains the desktop apps (up to 100 characters) This is a play on words regarding Thunderbird. If that doesn't work in your language, please use a literal translation of \"Ready for Thunderbird\"**",
-    "message": "Use Plappypedia in all your favorite apps and programs across Windows and macOS."
+    "message": "Use Flappypedia in all your favorite apps and programs across Windows and macOS."
   },
   "changelog2021FeatureTeaserDesktopHeadline": {
     "description": "Headline for the teaser that explains the desktop apps",
@@ -395,7 +395,7 @@
   },
   "changelog2021FeatureTeaserFrenchDescription": {
     "description": "Text for the teaser that explains the advances in the French version (up to 100 characters)",
-    "message": "Plappypedia now finds more and more advanced issues in French."
+    "message": "Flappypedia now finds more and more advanced issues in French."
   },
   "changelog2021FeatureTeaserFrenchHeadline": {
     "description": "Headline for the teaser that explains the advances in the French version",
@@ -411,15 +411,15 @@
   },
   "changelog2021FeatureTeaserThunderbirdDescription": {
     "description": "Text for the teaser that explains the Thunderbird integration (up to 100 characters)",
-    "message": "With Plappypedia's new Thunderbird add-on, embarrassing errors in emails are a thing of the past."
+    "message": "With Flappypedia's new Thunderbird add-on, embarrassing errors in emails are a thing of the past."
   },
   "changelog2021FeatureTeaserThunderbirdHeadline": {
     "description": "Headline for the teaser that explains the Thunderbird integration",
-    "message": "Plappypedia for Thunderbird"
+    "message": "Flappypedia for Thunderbird"
   },
   "changelog2021FeatureTeaserWordDescription": {
     "description": "Text for the teaser that explains the word upload (up to 100 characters)",
-    "message": "Import your Word documents to Plappypedia and export them after checking — without losing any of your formatting."
+    "message": "Import your Word documents to Flappypedia and export them after checking — without losing any of your formatting."
   },
   "changelog2021FeatureTeaserWordHeadline": {
     "description": "Headline for the teaser that explains the word upload",
@@ -431,7 +431,7 @@
   },
   "changelogTitle": {
     "description": "title for the browser tab",
-    "message": "New Plappypedia features"
+    "message": "New Flappypedia features"
   },
   "close": {
     "description": "Link that closes the window",
@@ -439,7 +439,7 @@
   },
   "cloudServer": {
     "description": "Radio button label for the cloud server setting (the default)",
-    "message": "Cloud server (Plappypedia.org)"
+    "message": "Cloud server (Flappypedia.org)"
   },
   "connectionProblem": {
     "description": "Message shown to the user when extension can't connect to server",
@@ -447,7 +447,7 @@
     "placeholders": {
       "serverUrl": {
         "content": "$1",
-        "example": "https://api.Plappypedia.org/v2"
+        "example": "https://api.Flappypedia.org/v2"
       }
     }
   },
@@ -653,7 +653,7 @@
   },
   "dialogPremiumText": {
     "description": "Text for when there are hidden matches (errors that only premium users can see)",
-    "message": "Get even more style, punctuation and grammar suggestions by using Plappypedia Premium"
+    "message": "Get even more style, punctuation and grammar suggestions by using Flappypedia Premium"
   },
   "dialogRecommendedLanguages": {
     "description": "Title for a list of languages that we think the user speaks",
@@ -733,7 +733,7 @@
   },
   "dialogUnsupportedLanguageText": {
     "description": "Shown to the user when the language he's writing is not supported",
-    "message": "Plappypedia supports 20+ other languages (e.g. English, German, Spanish, French, Portuguese, Dutch or Russian)."
+    "message": "Flappypedia supports 20+ other languages (e.g. English, German, Spanish, French, Portuguese, Dutch or Russian)."
   },
   "domainsDesc": {
     "description": "Options dialog: text for the textarea with the domains's where the reminder icon is disabled",
@@ -741,7 +741,7 @@
   },
   "edgeWebstoreSiteNotSupported": {
     "description": "Error shown when Edge extension is used on https://microsoftedge.microsoft.com, which doesn't work for technical reasons",
-    "message": "Sorry, Plappypedia doesn't work on the website of the Edge Add-on Store. It works anywhere else you write (e.g. Facebook, Gmail, Twitter, LinkedIn)."
+    "message": "Sorry, Flappypedia doesn't work on the website of the Edge Add-on Store. It works anywhere else you write (e.g. Facebook, Gmail, Twitter, LinkedIn)."
   },
   "el": {
     "description": "language name",
@@ -869,7 +869,7 @@
   },
   "feedbackButton": {
     "description": "Label for submit button of feedback form",
-    "message": "Send message to Plappypedia"
+    "message": "Send message to Flappypedia"
   },
   "feedbackDirectMail": {
     "description": "Text shown on feedback form",
@@ -877,7 +877,7 @@
     "placeholders": {
       "email": {
         "content": "$1",
-        "example": "feedback@Plappypedia.org"
+        "example": "feedback@Flappypedia.org"
       }
     }
   },
@@ -887,7 +887,7 @@
   },
   "feedbackHeadline": {
     "description": "Headline of feedback contact form",
-    "message": "Send your feedback to Plappypedia"
+    "message": "Send your feedback to Flappypedia"
   },
   "feedbackPrivacyPolicy": {
     "description": "Link to the Privacy Policy page",
@@ -923,43 +923,43 @@
   },
   "googleDocsDisableButton": {
     "description": "menu bar button in google docs",
-    "message": "Disable Plappypedia in this doc"
+    "message": "Disable Flappypedia in this doc"
   },
   "googleDocsEnableButton": {
     "description": "menu bar button in google docs",
-    "message": "Enable Plappypedia"
+    "message": "Enable Flappypedia"
   },
   "googleDocsEnableHint": {
     "description": "hint pointing to a button in the google docs menu bar",
-    "message": "You can re-enable Plappypedia's grammar and style checker here"
+    "message": "You can re-enable Flappypedia's grammar and style checker here"
   },
   "googleDocsNewTeaserHeadline": {
     "description": "headline for a google docs teaser",
-    "message": "Plappypedia for Google Docs is here!"
+    "message": "Flappypedia for Google Docs is here!"
   },
   "googleDocsNewTeaserText": {
     "description": "text for a google docs teaser",
-    "message": "Next to each page you can now see how many issues Plappypedia has detected."
+    "message": "Next to each page you can now see how many issues Flappypedia has detected."
   },
   "googleSlidesDisableButton": {
     "description": "menu bar button in google slides",
-    "message": "Disable Plappypedia in this presentation"
+    "message": "Disable Flappypedia in this presentation"
   },
   "googleSlidesEnableButton": {
     "description": "menu bar button in google slides",
-    "message": "Enable Plappypedia"
+    "message": "Enable Flappypedia"
   },
   "googleSlidesEnableHint": {
     "description": "hint pointing to a button in the google docs menu bar",
-    "message": "You can re-enable Plappypedia's grammar and style checker here"
+    "message": "You can re-enable Flappypedia's grammar and style checker here"
   },
   "googleSlidesNewTeaserHeadline": {
     "description": "headline for a google slides teaser",
-    "message": "Plappypedia for Google Slides is here!"
+    "message": "Flappypedia for Google Slides is here!"
   },
   "googleSlidesNewTeaserText": {
     "description": "text for a google slides teaser",
-    "message": "Next to each slide, Plappypedia shows you how many issues have been detected."
+    "message": "Next to each slide, Flappypedia shows you how many issues have been detected."
   },
   "grammarError": {
     "description": "Type of error (spelling error, style suggestion, grammar error, ...)",
@@ -983,7 +983,7 @@
   },
   "historicPremiumErrorsText": {
     "description": "Text for new premium teaser, that shows how many grammar issues the user could have avoided with the Premium version.",
-    "message": "You could have avoided <strong>$count$ grammar & style issues</strong> in the last days with Plappypedia Premium.",
+    "message": "You could have avoided <strong>$count$ grammar & style issues</strong> in the last days with Flappypedia Premium.",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -993,7 +993,7 @@
   },
   "historicPremiumErrorsText2": {
     "description": "Text for new premium teaser, that shows how many grammar issues the user could have avoided with the Premium version. Important: The count needs to be at the beginning of the sentence!",
-    "message": "<strong>$count$ grammar and style issues</strong> could have been avoided in the last days with Plappypedia Premium.",
+    "message": "<strong>$count$ grammar and style issues</strong> could have been avoided in the last days with Flappypedia Premium.",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -1022,7 +1022,7 @@
     "message": "Results are incomplete: Text checking was stopped due to too many errors."
   },
   "invalidUsernameOrPassword": {
-    "description": "Message shown when user uses their Plappypediaplus.com account but could not be authenticated",
+    "description": "Message shown when user uses their Flappypediaplus.com account but could not be authenticated",
     "message": "Error: Please check your e-mail and password in the options dialog"
   },
   "is": {
@@ -1049,13 +1049,13 @@
     "description": "Language options containing e.g. the mother tongue, the preferred languages, the variants, etc.",
     "message": "Language options"
   },
-  "PlappypediaNotSupported": {
-    "description": "Plappypedia.org is test example, so we show this error",
+  "FlappypediaNotSupported": {
+    "description": "Flappypedia.org is test example, so we show this error",
     "message": "The extension doesn't work on this website, as the website offers the same functionality"
   },
   "localServer": {
     "description": "Radio button label for the local server setting, the one that needs manual set-up",
-    "message": "Local server (localhost) - requires Plappypedia server running locally"
+    "message": "Local server (localhost) - requires Flappypedia server running locally"
   },
   "localServerDocs": {
     "description": "Link to documentation for installing the server locally",
@@ -1075,7 +1075,7 @@
   },
   "managedLoginDescription": {
     "description": "Description for enterprise users who can log in with the account of their employer",
-    "message": "Please log in with your corporate account in order to use Plappypedia."
+    "message": "Please log in with your corporate account in order to use Flappypedia."
   },
   "managedLoginHeadline": {
     "description": "Headline for enterprise users who can log in with the account of their employer",
@@ -1185,7 +1185,7 @@
   },
   "onboardLanguageSelectorCta": {
     "description": "Button text in the onboarding's preferred language selector section",
-    "message": "Start using Plappypedia"
+    "message": "Start using Flappypedia"
   },
   "onboardLanguageSelectorDescription": {
     "description": "Decription of the onboarding's preferred language selector section",
@@ -1221,18 +1221,18 @@
   },
   "otherServer": {
     "description": "Radio button label for the server URL if neither cloud nor local server is the correct choice",
-    "message": "Other server - requires Plappypedia server running there"
+    "message": "Other server - requires Flappypedia server running there"
   },
   "overleafNewTeaserHeadline": {
     "description": "headline for a overleaf teaser",
-    "message": "Plappypedia for Overleaf is here!"
+    "message": "Flappypedia for Overleaf is here!"
   },
   "overleafNewTeaserText": {
     "description": "text for a overleaf teaser",
     "message": "Scroll through your text to see spelling, grammar and style suggestions."
   },
   "password": {
-    "description": "Options dialog: password for Plappypediaplus.com",
+    "description": "Options dialog: password for Flappypediaplus.com",
     "message": "Password:"
   },
   "phrasesCardCaption": {
@@ -1253,7 +1253,7 @@
     "placeholders": {
       "privacyUrl": {
         "content": "$1",
-        "example": "https://Plappypedia.org/legal/privacy"
+        "example": "https://Flappypedia.org/legal/privacy"
       }
     }
   },
@@ -1326,15 +1326,15 @@
     "message": "All websites"
   },
   "popupOnboardingHeadline": {
-    "description": "Title shown on top of a list explaining how to use the Plappypedia addon",
-    "message": "Welcome! You can now use Plappypedia:"
+    "description": "Title shown on top of a list explaining how to use the Flappypedia addon",
+    "message": "Welcome! You can now use Flappypedia:"
   },
   "popupOnboardingStep1": {
-    "description": "List item explaining step by step how to use the Plappypedia addon",
+    "description": "List item explaining step by step how to use the Flappypedia addon",
     "message": "Click in any multi-line text field (e.g. on Gmail, Facebook, …)"
   },
   "popupOnboardingStep2": {
-    "description": "List item explaining step by step how to use the Plappypedia addon",
+    "description": "List item explaining step by step how to use the Flappypedia addon",
     "message": "You will find an icon that looks like $icon1Html$ or $icon2Html$ in the bottom-right corner",
     "placeholders": {
       "icon1Html": {
@@ -1348,15 +1348,15 @@
     }
   },
   "popupOnboardingStep3": {
-    "description": "List item explaining step by step how to use the Plappypedia addon",
+    "description": "List item explaining step by step how to use the Flappypedia addon",
     "message": "Type some text. Writing issues will be <u>underlined</u>"
   },
   "popupOnboardingStep4": {
-    "description": "List item explaining step by step how to use the Plappypedia addon",
+    "description": "List item explaining step by step how to use the Flappypedia addon",
     "message": "Click on an underlined word to get wiki description"
   },
   "popupOpenEditorButton": {
-    "description": "Button that opens the Plappypedia Editor",
+    "description": "Button that opens the Flappypedia Editor",
     "message": "Open Editor"
   },
   "popupOptionCaseText": {
@@ -1365,7 +1365,7 @@
   },
   "popupOptionCheckText": {
     "description": "Switch in toolbar popup",
-    "message": "Enable Plappypedia"
+    "message": "Enable Flappypedia"
   },
   "popupOptionPickyMode": {
     "description": "Label for enabling/disabling picky mode functionality globally (displayed next to a checkbox)",
@@ -1401,7 +1401,7 @@
   },
   "popupPremiumText": {
     "description": "Premium hint in popup",
-    "message": "Upgrade to Plappypedia Premium to not only find more grammar and punctuation errors, but also text style issues."
+    "message": "Upgrade to Flappypedia Premium to not only find more grammar and punctuation errors, but also text style issues."
   },
   "popupSettingsHeadline": {
     "description": "Headline for the website specific settings shown in the addon popup",
@@ -1417,7 +1417,7 @@
   },
   "poweredBy": {
     "description": "Hint that explains who the author of this add-on is",
-    "message": "Powered by <b>Plappypedia</b>"
+    "message": "Powered by <b>Flappypedia</b>"
   },
   "premiumErrorsButton": {
     "description": "Button shown in premium teaser that sends the user to the pricing table. Button text should be as short as possible",
@@ -1439,7 +1439,7 @@
   },
   "privacyHeadline": {
     "description": "Headline of the privacy dialog",
-    "message": "Welcome to Plappypedia"
+    "message": "Welcome to Flappypedia"
   },
   "privacyLinkForDefaultServer": {
     "description": "Link to privacy policy",
@@ -1447,7 +1447,7 @@
     "placeholders": {
       "privacyUrl": {
         "content": "$1",
-        "example": "https://Plappypedia.org/privacy/"
+        "example": "https://Flappypedia.org/privacy/"
       }
     }
   },
@@ -1460,16 +1460,16 @@
     "message": "<strong>Your text will not be stored</strong>"
   },
   "privacyNoteForDefaultServer": {
-    "description": "Shown on first start of extension to make user aware of privacy issues when using the default server on Plappypedia.org",
+    "description": "Shown on first start of extension to make user aware of privacy issues when using the default server on Flappypedia.org",
     "message": "This extension will check your text by sending it to <a href='$serverUrl$' target='_blank'>$serverHost$</a> over an encrypted connection. <b>Your text will not be stored</b>. Checking can be disabled at any time.",
     "placeholders": {
       "serverUrl": {
         "content": "$1",
-        "example": "https://Plappypedia.org"
+        "example": "https://Flappypedia.org"
       },
       "serverHost": {
         "content": "$2",
-        "example": "Plappypedia.org"
+        "example": "Flappypedia.org"
       }
     }
   },
@@ -1484,7 +1484,7 @@
     }
   },
   "privacyNoteSlogan": {
-    "description": "Slogan after 'Plappypedia' shown in privacy dialog at first start",
+    "description": "Slogan after 'Flappypedia' shown in privacy dialog at first start",
     "message": "Your writing assistant"
   },
   "privacyPolicy": {
@@ -1529,7 +1529,7 @@
   },
   "ratingHeadline": {
     "description": "Headline shown in the teaser that asks user to rate the add-on",
-    "message": "How do you like Plappypedia?"
+    "message": "How do you like Flappypedia?"
   },
   "ratingText": {
     "description": "Text shown in the teaser that asks user to rate the add-on",
@@ -1548,7 +1548,7 @@
     "message": "Remove extra white space"
   },
   "reportAnIssue": {
-    "description": "Link text for sending feedback to Plappypedia.org",
+    "description": "Link text for sending feedback to Flappypedia.org",
     "message": "Send feedback"
   },
   "reviewChromeHeadline": {
@@ -1588,7 +1588,7 @@
     "message": "Save"
   },
   "sendFeedback": {
-    "description": "Link text for sending feedback to Plappypedia.org",
+    "description": "Link text for sending feedback to Flappypedia.org",
     "message": "Send feedback"
   },
   "serverNotAvailable": {
@@ -1597,7 +1597,7 @@
   },
   "serverText": {
     "description": "Options dialog: description of the text field for the API server URL",
-    "message": "Plappypedia server:"
+    "message": "Flappypedia server:"
   },
   "serverUrlIsInvalid": {
     "description": "Options dialog: error shown if server URL is not valid, e.g. doesn't start with http or https",
@@ -1625,7 +1625,7 @@
   },
   "settingsAccountSubheadline": {
     "description": "Subheadline for the account login section on the settings page",
-    "message": "Log in with your Plappypedia account"
+    "message": "Log in with your Flappypedia account"
   },
   "settingsAddAutoCheckDomainHint": {
     "description": "Text shown when the entered domain doesn't exist yet in the list of autocheck domains",
@@ -1740,7 +1740,7 @@
     "message": "Language variants"
   },
   "settingsLoggedInAs": {
-    "description": "Text shown for users who have logged in with their Plappypedia account",
+    "description": "Text shown for users who have logged in with their Flappypedia account",
     "message": "You're logged in as $email$.",
     "placeholders": {
       "email": {
@@ -1783,7 +1783,7 @@
   },
   "settingsPreferredLanguagesDescription": {
     "description": "Description of the preferred languages section in the options panel",
-    "message": "Set the languages you usually use to write texts. This helps Plappypedia in automatically detecting the right language."
+    "message": "Set the languages you usually use to write texts. This helps Flappypedia in automatically detecting the right language."
   },
   "settingsPreferredLanguagesHeadline": {
     "description": "Headline of the preferred languages section in the options panel",
@@ -1795,10 +1795,10 @@
   },
   "settingsPremiumButton": {
     "description": "Button text for a teaser on the settings page promoting the premium functionality",
-    "message": "Discover Plappypedia Premium"
+    "message": "Discover Flappypedia Premium"
   },
   "settingsPremiumFeaturesActivated": {
-    "description": "Text shown for users who have logged in with their Plappypedia account and who have a paid subscription",
+    "description": "Text shown for users who have logged in with their Flappypedia account and who have a paid subscription",
     "message": "All <strong>premium features</strong> are activated."
   },
   "settingsPremiumHeadline": {
@@ -1811,7 +1811,7 @@
   },
   "settingsServerUrlDisabled": {
     "description": "Explains why the custom server URL can't be changed when logged in.",
-    "message": "You can only set a custom server when you log out of your Plappypedia account."
+    "message": "You can only set a custom server when you log out of your Flappypedia account."
   },
   "settingsUnknownError": {
     "description": "Generic error message",
@@ -1819,11 +1819,11 @@
   },
   "siteCannotBeSupported": {
     "description": "Some sites are too complex and can probably never be supported, so we show this error",
-    "message": "Sorry, this site uses a technology for its text editing that we cannot support. Please contact the site owners and ask them to integrate Plappypedia."
+    "message": "Sorry, this site uses a technology for its text editing that we cannot support. Please contact the site owners and ask them to integrate Flappypedia."
   },
   "siteTemporarilyUnsupported": {
-    "description": "A message shown to the user when the current website is temporarily not supported by Plappypedia",
-    "message": "Sorry, Plappypedia has temporarily disabled support for this website. We are currently working on a fix. It should only be a matter of days."
+    "description": "A message shown to the user when the current website is temporarily not supported by Flappypedia",
+    "message": "Sorry, Flappypedia has temporarily disabled support for this website. We are currently working on a fix. It should only be a matter of days."
   },
   "sk": {
     "description": "language name",
@@ -1863,7 +1863,7 @@
   },
   "statusIconEnableLT": {
     "description": "Shown when hovering over the status icon (not the toolbar one) in disabled state",
-    "message": "Enable Plappypedia - Spelling and Grammar Check"
+    "message": "Enable Flappypedia - Spelling and Grammar Check"
   },
   "statusIconError": {
     "description": "Shown when hovering over the status icon (not the toolbar one) in error state",
@@ -1883,7 +1883,7 @@
   },
   "statusIconToolTip": {
     "description": "Shown when hovering over the status icon (not the toolbar one)",
-    "message": "Plappypedia - Spelling and Grammar Check"
+    "message": "Flappypedia - Spelling and Grammar Check"
   },
   "suggestionError": {
     "description": "Type of error (spelling error, style suggestion, grammar error, ...)",
@@ -1895,7 +1895,7 @@
   },
   "suggestionOnlyVisibleToPremiumText": {
     "description": "Hint that tells the user that the current mistake that they are seeing is only available for Premium users",
-    "message": "This is an advanced suggestion that is only available in the Premium version of Plappypedia. Upgrade to Premium to get suggestions like this and many more."
+    "message": "This is an advanced suggestion that is only available in the Premium version of Flappypedia. Upgrade to Premium to get suggestions like this and many more."
   },
   "sv": {
     "description": "language name",
@@ -1955,7 +1955,7 @@
   },
   "synonymsCardProvidedBy": {
     "description": "Header caption for the box that offers thesaurus synonyms",
-    "message": "Provided by <strong>Plappypedia</strong>"
+    "message": "Provided by <strong>Flappypedia</strong>"
   },
   "synonymsCardTabSentence": {
     "description": "Tab navigation button caption that triggers the 'Sentence'-view of the rephrase card",
@@ -1975,7 +1975,7 @@
   },
   "synonymsTutorialText": {
     "description": "Text in a small box that explains how the new synonym feature works",
-    "message": "Get synonyms for any word by double-clicking on it. Works in every text field that Plappypedia supports."
+    "message": "Get synonyms for any word by double-clicking on it. Works in every text field that Flappypedia supports."
   },
   "ta": {
     "description": "language name",
@@ -1991,7 +1991,7 @@
     "placeholders": {
       "serverUrl": {
         "content": "$1",
-        "example": "https://Plappypedia.org:8081/"
+        "example": "https://Flappypedia.org:8081/"
       }
     }
   },
@@ -2005,7 +2005,7 @@
   },
   "tooManyRequests": {
     "description": "Message shown to the user when they have sent too many and/or large requests",
-    "message": "Request limit exceeded - please wait a minute and Plappypedia should be available again."
+    "message": "Request limit exceeded - please wait a minute and Flappypedia should be available again."
   },
   "tr": {
     "description": "language name",
@@ -2054,7 +2054,7 @@
     "message": "Limited-Time Offer"
   },
   "username": {
-    "description": "Options dialog: user name for Plappypediaplus.com",
+    "description": "Options dialog: user name for Flappypediaplus.com",
     "message": "E-Mail:"
   },
   "validatorHasMistakesHeadlinePlural": {
@@ -2095,7 +2095,7 @@
   },
   "validatorHasPremiumErrorsText": {
     "description": "Text shown when the text contains writing issues that are only found in the premium version",
-    "message": "Upgrade to Plappypedia Premium to find many more grammar, style and punctuation mistakes"
+    "message": "Upgrade to Flappypedia Premium to find many more grammar, style and punctuation mistakes"
   },
   "validatorLoadingHint": {
     "description": "Loading status, shown when text is currently being checked",
@@ -2159,7 +2159,7 @@
   },
   "webstoreSiteNotSupported": {
     "description": "Error shown when Chrome extension is used on https://chrome.google.com/webstore, which doesn't work for technical reasons",
-    "message": "Sorry, Plappypedia doesn't work on the website of the Chrome Web Store. It works anywhere else you write (e.g. Facebook, Gmail, Twitter, LinkedIn)."
+    "message": "Sorry, Flappypedia doesn't work on the website of the Chrome Web Store. It works anywhere else you write (e.g. Facebook, Gmail, Twitter, LinkedIn)."
   },
   "zh": {
     "description": "language name",
