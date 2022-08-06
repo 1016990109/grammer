@@ -145,18 +145,18 @@ FlappyAuth.getToken().then(()=>{
   loginButton.style.display= "block"
 })
 loginButton.onclick = ()=>{
-  window.open("https://www.flappypedia.com")
+  window.open("https://flappypedia.com")
   window.close()
 }
 
 //foot link
 homeButton = document.getElementById("flappy_pop_home")
 homeButton.onclick = ()=>{
-  window.open("https://www.flappypedia.com")
+  window.open("https://flappypedia.com")
   window.close()
 }
 feedbackButton = document.getElementById("flappy_pop_feedback")
 feedbackButton.onclick = ()=>{
-  window.open("https://www.flappypedia.com")
+  window.open("https://flappypedia.com")
   window.close()
 }

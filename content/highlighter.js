@@ -30,7 +30,7 @@ class Highlighter {
       if (this._isMirror && t.stopImmediatePropagation(), !this._container) return;
       if (this._isHighlightingDisabled) return;
       // 判断鼠标位置是否在errorCard中
-      const errCard = document.querySelector("#plappy-card")
+      const errCard = document.querySelector("#flappy-card")
       let isInCard = false
       if (errCard) {
         if (e + 10 >= errCard.offsetLeft &&

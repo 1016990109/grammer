@@ -56,7 +56,7 @@ class ErrorCard {
     hasDarkBackground(this._inputArea) ? this._container.setAttribute("data-lt-force-appearance", "dark") : this._container.setAttribute("data-lt-force-appearance", "light")
     const t = this._document.createElement("lt-div");
     t.classList.add("lt-card__container")
-    t.id = 'plappy-card'
+    t.id = 'flappy-card'
     t.classList.add("lt-card__container--error-card")
     t.classList.add("notranslate")
     this._renderContent(t)
