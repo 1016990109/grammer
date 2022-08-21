@@ -1,7 +1,7 @@
 {
 "update_url": "https://clients2.google.com/service/update2/crx",
 
-	"manifest_version": 2,
+	"manifest_version": 3,
 	"name": "__MSG_appName__",
 	"short_name": "Flappypedia",
 	"description": "__MSG_appDesc__",
@@ -26,34 +26,7 @@
 		"matches": ["*://localhost/*", "*://flappypedia.com/*"]
 	},
 	"background": {
-		"scripts": [
-			"common/browser-polyfill.min.js",
-			"config/config.js",
-			"common/browserDetector.js",
-			"core/utils.js",
-			"common/utils.js",
-			"common/eventBus.js",
-			"common/messages.js",
-			"common/i18nManager.js",
-			"common/extensioni18nManager.js",
-			"common/languageManager.js",
-			"common/storageController.js",
-			"common/extensionStorageController.js",
-			"common/environmentAdapter.js",
-			"common/extensionEnvironmentAdapter.js",
-			"common/thunderbird.js",
-			"common/extension-init.js",
-			"common/tracker.js",
-			"core/GraphemeSplitter.js",
-			"core/Checker.js",
-			"background/flappy/flappy.data.js",
-			"background/flappy/flappy.auth.js",
-			"background/flappy/flappy.adapter.js",
-			"background/dictionarySync.js",
-			"background/synonyms.js",
-			"background/phrases.js",
-			"background/extension-main.js"
-		]
+		"service_worker": "background/service_worker.js"
 	},
 	"content_scripts": [
 		{
@@ -169,7 +142,6 @@
 	],
 	"options_ui": {
 		"page": "options/options.html",
-		"chrome_style": false,
 		"open_in_tab": true
 	},
 	"browser_action": {
@@ -178,21 +150,24 @@
 		"default_popup": "popup/popup.html"
 	},
 	"web_accessible_resources": [
-		"assets/fonts/*.woff2",
-		"assets/styles/*",
-		"common/*.css",
-		"common/*.js",
-		"content/*.css",
-		"content/*.js",
-		"config/*.js",
-		"welcome/*.js",
-		"welcome/welcome.css",
-		"welcome/managedLoginRedirectUri.html",
-		"welcome/loginRedirectUri.html",
-		"welcome/templates/index.html",
-		"content/iframes/rating/*.html",
-		"content/iframes/premiumErrors/*.html",
-		"content/iframes/historicPremiumErrors/*.html",
-		"assets/images/*"
+		{
+			"resources": ["assets/fonts/*.woff2",
+				"assets/styles/*",
+				"common/*.css",
+				"common/*.js",
+				"content/*.css",
+				"content/*.js",
+				"config/*.js",
+				"welcome/*.js",
+				"welcome/welcome.css",
+				"welcome/managedLoginRedirectUri.html",
+				"welcome/loginRedirectUri.html",
+				"welcome/templates/index.html",
+				"content/iframes/rating/*.html",
+				"content/iframes/premiumErrors/*.html",
+				"content/iframes/historicPremiumErrors/*.html",
+				"assets/images/*"],
+			"matches": ["<all_urls>"]
+		}
 	]
 }
