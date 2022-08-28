@@ -30,6 +30,6 @@ try{
         "./extension-main.js"
     )
 }catch (e) {
-    console.log("importScript "+e.message)
+    console.error("importScript "+e.message)
 }
 
