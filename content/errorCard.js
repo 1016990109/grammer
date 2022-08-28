@@ -93,7 +93,7 @@ class ErrorCard {
       return `${url.protocol}//${url.hostname}/favicon.ico`;
     } catch (e) {
       console.error(e)
-      return link
+      return 'https://flappypedia.com/favicon.svg'
     }
   }
 

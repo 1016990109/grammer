@@ -99,6 +99,7 @@
 .flappy-link {
     transition: all 0.3s ease-in-out;
     color: #7B61FF;
+    margin-bottom: 1px;
 }
 
 .flappy-link:hover {
@@ -108,11 +109,13 @@
 .link-container {
     display: flex;
     align-items: center;
+    margin: 10px 0;
 }
 
 .el-image {
-    width: 20px !important;
-    height: 20px !important;
+    width: 18px !important;
+    height: 18px !important;
+    margin-right: 6px;
 }
 
 .el-input {
