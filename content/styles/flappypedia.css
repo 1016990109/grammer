@@ -1,3 +1,21 @@
+html,
+body {
+    min-height: 100% !important;
+    height: 100%;
+    overflow: hidden;
+    margin: 0 !important;
+}
+
+::-webkit-scrollbar {
+    width: 3px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(144, 147, 153, 0.3);
+    border-radius: 20px;
+    transition: background-color 0.3s;
+}
+
 *[contenteditable="true"] {
     border: none;
     outline: none;
