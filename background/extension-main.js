@@ -30,7 +30,7 @@ var __awaiter = this && this.__awaiter || function (e, t, s, a) {
 class BackgroundApp {
   static _constructor() {
     if (!this._isInitialized) {
-      if (this._onDataLoaded = this._onDataLoaded.bind(this), this._onInstalled = this._onInstalled.bind(this), this._onMessage = this._onMessage.bind(this), this._onContextMenuItemClicked = this._onContextMenuItemClicked.bind(this), this._storageController = StorageController.create(), this._storageController.onReady(this._onDataLoaded), browser.runtime.onInstalled.addListener(this._onInstalled), browser.runtime.onMessage.addListener(this._onMessage), DictionarySync.init(), this._browserAction = browser.browserAction || browser.composeAction, this._contextMenu = browser.contextMenus || browser.menus, this._updateIcon(), window.setInterval((() => this._updateIcon()), config.UI_MODE_RECHECK_INTERVAL), this._checkForPaidSubscription(), window.setInterval((() => this._checkForPaidSubscription()), config.ACCOUNT_STATUS_RECHECK_INTERVAL), this._loadConfiguration(), window.setInterval((() => this._loadConfiguration()), config.EXTERNAL_CONFIG_RELOAD_INTERVAL), this._ping(), window.setInterval((() => this._ping()), config.PING_INTERVAL), this._syncUserData(), window.setInterval((() => this._syncUserData()), config.SYNC_USER_DATA_INTERVAL), BrowserDetector.isFirefox() || BrowserDetector.isThunderbird()) {
+      if (this._onDataLoaded = this._onDataLoaded.bind(this), this._onInstalled = this._onInstalled.bind(this), this._onMessage = this._onMessage.bind(this), this._onContextMenuItemClicked = this._onContextMenuItemClicked.bind(this), this._storageController = StorageController.create(), this._storageController.onReady(this._onDataLoaded), browser.runtime.onInstalled.addListener(this._onInstalled), browser.runtime.onMessage.addListener(this._onMessage), DictionarySync.init(), this._browserAction = chrome.action || browser.composeAction, this._contextMenu = browser.contextMenus || browser.menus, this._updateIcon(), window.setInterval((() => this._updateIcon()), config.UI_MODE_RECHECK_INTERVAL), this._checkForPaidSubscription(), window.setInterval((() => this._checkForPaidSubscription()), config.ACCOUNT_STATUS_RECHECK_INTERVAL), this._loadConfiguration(), window.setInterval((() => this._loadConfiguration()), config.EXTERNAL_CONFIG_RELOAD_INTERVAL), this._ping(), window.setInterval((() => this._ping()), config.PING_INTERVAL), this._syncUserData(), window.setInterval((() => this._syncUserData()), config.SYNC_USER_DATA_INTERVAL), BrowserDetector.isFirefox() || BrowserDetector.isThunderbird()) {
         const e = () => {
           browser.runtime.onUpdateAvailable.removeListener(e), this._installUpdate()
         };
@@ -100,13 +100,8 @@ class BackgroundApp {
     return __awaiter(this, void 0, void 0, (function* () {
       if (BrowserDetector.isSafari()) return;
       this._browserAction.setIcon({
-        path: {
-          16: "/assets/images/flappy_logo.png",
-          32: "/assets/images/flappy_logo.png",
-          48: "/assets/images/flappy_logo.png",
-          64: "/assets/images/flappy_logo.png",
-          128: "/assets/images/flappy_logo.png"
-        }
+        path:
+          "/assets/images/flappy_logo.png"
       })
     }))
   }
